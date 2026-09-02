@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background font-sans text-forest antialiased;
+  }
+}
+
+@layer components {
+  .container-luxe {
+    @apply mx-auto w-full max-w-luxe px-6 lg:px-10;
+  }
+
+  .container-nautic {
+    @apply container-luxe;
+  }
+
+  .section-padding {
+    @apply py-14 md:py-20;
+  }
+
+  .page-hero {
+    @apply border-b border-border/40 bg-background pt-32 lg:pt-40;
+  }
+
+  .eyebrow {
+    @apply text-[0.68rem] font-normal uppercase tracking-[0.32em] text-sage;
+  }
+
+  .heading-display {
+    @apply font-serif text-balance text-[2.15rem] font-normal leading-[1.08] tracking-[-0.01em] text-forest sm:text-5xl lg:text-[3.6rem];
+  }
+
+  .heading-section {
+    @apply font-serif text-3xl font-normal leading-[1.05] text-forest md:text-4xl lg:text-5xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-gold px-7 py-3.5 text-sm font-medium text-forest transition hover:bg-gold-light;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-forest/25 px-7 py-3.5 text-sm font-light text-forest transition hover:border-forest hover:bg-forest hover:text-background;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-white/[0.38] px-7 py-3.5 text-sm font-light text-white transition hover:border-white hover:bg-white/10;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-full border border-forest/25 px-7 py-3.5 text-sm font-light text-forest transition hover:border-forest hover:bg-forest hover:text-background;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-border/60;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-border/50 bg-card shadow-sm;
+  }
+
+  .nav-link {
+    @apply relative py-1 text-[0.78rem] font-light tracking-[0.06em] text-forest/70 transition-colors duration-500 hover:text-forest;
+  }
+
+  .nav-link-underline {
+    @apply pointer-events-none absolute inset-x-0 -bottom-0.5 h-px origin-right scale-x-0 bg-gold transition-transform duration-500 ease-out group-hover:origin-left group-hover:scale-x-100;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: reveal 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@layer utilities {
+  @keyframes reveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
