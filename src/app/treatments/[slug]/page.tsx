@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  categoryProgramOptions,
-  otherGoalLinks,
-} from "@/lib/programs";
+import { categoryProgramOptions } from "@/lib/programs";
 import { siteConfig, treatmentCategoryPages } from "@/lib/data";
 import type { Metadata } from "next";
 
@@ -26,7 +23,6 @@ export default async function TreatmentCategoryPage({ params }: Props) {
   if (!category) notFound();
 
   const programs = categoryProgramOptions[slug] ?? [];
-  const otherGoals = otherGoalLinks.filter((link) => !link.href.endsWith(slug));
 
   return (
     <>
@@ -43,12 +39,6 @@ export default async function TreatmentCategoryPage({ params }: Props) {
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
             {category.description}
           </p>
-          {slug === "hormone-health" && (
-            <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
-              Hormone-related treatment options for men and women. Your provider determines
-              which, if any, is appropriate for you.
-            </p>
-          )}
           <p className="mt-6 text-[0.68rem] uppercase tracking-[0.2em] text-sage">
             Physician-guided care • Licensed provider review • Personalized treatment decisions
           </p>
@@ -96,23 +86,6 @@ export default async function TreatmentCategoryPage({ params }: Props) {
           </div>
         </section>
       )}
-
-      <section className="section-padding border-t border-border/40 bg-surface/40">
-        <div className="container-luxe">
-          <h2 className="font-serif text-2xl text-forest">Other goals</h2>
-          <div className="mt-6 flex flex-wrap gap-3">
-            {otherGoals.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-full border border-border/60 px-4 py-2 text-sm text-forest/80 transition hover:border-gold/40 hover:text-forest"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="border-t border-border/40 py-12">
         <div className="container-luxe max-w-3xl text-center">

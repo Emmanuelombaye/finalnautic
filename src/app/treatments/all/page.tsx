@@ -2,13 +2,13 @@ import Link from "next/link";
 import FaqAccordion from "@/components/FaqAccordion";
 import { siteConfig } from "@/lib/data";
 import { pricingIncludes } from "@/lib/program-shared";
-import { bundles as bundleList, programs as programList } from "@/lib/programs";
+import { programs as programList } from "@/lib/programs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "All Treatments",
   description:
-    "Browse physician-guided wellness programs with transparent monthly pricing.",
+    "Browse physician-guided Semaglutide and Tirzepatide programs with transparent monthly pricing.",
 };
 
 const pricingFaqs = [
@@ -49,67 +49,25 @@ const pricingFaqs = [
   },
 ];
 
-const compareItems = [
-  ...programList.map((p) => ({
-    category: `${p.pricingCategory} · $${p.price}/mo`,
-    name: p.name,
-    bestFor:
-      p.slug === "semaglutide"
-        ? "Weight management"
-        : p.slug === "tirzepatide"
-          ? "Advanced weight management"
-          : p.slug === "testosterone-optimization"
-            ? "Men's hormone health"
-            : p.slug === "womens-hrt"
-              ? "Perimenopause & menopause"
-              : p.slug === "enclomiphene"
-                ? "Men's hormone support"
-                : p.slug === "nad-plus"
-                  ? "Energy & vitality"
-                  : p.slug === "sermorelin"
-                    ? "Recovery & sleep"
-                    : p.slug === "longevity-plus"
-                      ? "Advanced longevity"
-                      : p.slug === "glutathione"
-                        ? "Antioxidant & recovery support"
-                        : "Cognitive & energy wellness",
-    href: p.href,
-  })),
-  ...bundleList.map((b) => ({
-    category: `Bundle · $${b.price}/mo`,
-    name: b.name,
-    bestFor:
-      b.slug === "metabolic-bundle"
-        ? "Weight and energy together"
-        : b.slug === "metabolic-plus"
-          ? "Advanced weight and energy"
-          : b.slug === "longevity-plus"
-            ? "Longevity and recovery support"
-            : b.slug === "mens-vitality"
-              ? "Hormones and energy"
-              : b.slug === "womens-vitality"
-                ? "Hormones and energy"
-                : b.slug === "mens-performance-recovery"
-                  ? "Hormones and recovery"
-                  : b.slug === "longevity-complete"
-                    ? "Longevity, recovery, and cellular wellness"
-                    : "Weight management and comprehensive wellness",
-    href: `/bundles/${b.slug}`,
-  })),
-];
+const compareItems = programList.map((p) => ({
+  category: `${p.pricingCategory} · $${p.price}/mo`,
+  name: p.name,
+  bestFor:
+    p.slug === "tirzepatide" ? "Advanced weight management" : "Weight management",
+  href: p.href,
+}));
 
-function ProgramCard({
-  category,
-  program,
-}: {
-  category: string;
-  program: (typeof programList)[number];
-}) {
+function ProgramCard({ program }: { program: (typeof programList)[number] }) {
   return (
     <article className="rounded-[2rem] border border-border/60 bg-card p-8 md:p-10">
       <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-gold">
-        ★{category}
+        ★Medical Weight Loss
       </p>
+      {program.badge && (
+        <span className="mt-3 inline-block rounded-full bg-gold/10 px-3 py-1 text-xs font-medium text-gold">
+          {program.badge}
+        </span>
+      )}
       <h3 className="mt-5 font-serif text-3xl text-forest">{program.name}</h3>
       <p className="mt-2 text-sm text-muted-foreground">{program.pricingSubtitle}</p>
       <p className="mt-3 text-sm text-gold">{program.includes}</p>
@@ -135,20 +93,12 @@ function ProgramCard({
           Learn More
         </Link>
       </div>
-      <p className="mt-4 text-xs text-sage">
-        Begins a secure intake — not a purchase.
-      </p>
+      <p className="mt-4 text-xs text-sage">Begins a secure intake — not a purchase.</p>
     </article>
   );
 }
 
 export default function AllTreatmentsPage() {
-  const weightPrograms = programList.filter((p) => p.pricingCategory === "Medical Weight Loss");
-  const hormonePrograms = programList.filter((p) => p.pricingCategory === "Hormone Health");
-  const longevityPrograms = programList.filter(
-    (p) => p.pricingCategory === "Longevity & Wellness"
-  );
-
   return (
     <>
       <section className="page-hero">
@@ -157,15 +107,15 @@ export default function AllTreatmentsPage() {
             href="/treatments"
             className="text-[0.68rem] uppercase tracking-[0.22em] text-muted-foreground hover:text-forest"
           >
-            ← Explore by goal
+            ← Explore treatments
           </Link>
           <p className="eyebrow mb-4 mt-6">All Treatments</p>
-          <h1 className="heading-display max-w-4xl">Personalized Wellness Programs</h1>
+          <h1 className="heading-display max-w-4xl">Personalized Weight Management</h1>
           <p className="mt-4 text-sm uppercase tracking-[0.16em] text-sage">
             Physician-Led Care • U.S. Pharmacy Fulfillment • Home Delivery
           </p>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            Physician-guided wellness programs designed around your goals. One transparent
+            Two physician-guided programs — Semaglutide and Tirzepatide. One transparent
             monthly price includes medical oversight, a personalized treatment plan, ongoing
             support, and home delivery from a U.S. pharmacy when prescribed.
           </p>
@@ -182,80 +132,10 @@ export default function AllTreatmentsPage() {
           <div>
             <h2 className="heading-section">Medical Weight Loss</h2>
             <div className="mt-10 grid gap-8 lg:grid-cols-2">
-              {weightPrograms.map((program) => (
-                <ProgramCard key={program.slug} category="Medical Weight Loss" program={program} />
+              {programList.map((program) => (
+                <ProgramCard key={program.slug} program={program} />
               ))}
             </div>
-          </div>
-
-          <div>
-            <h2 className="heading-section">Hormone Health</h2>
-            <div className="mt-10 grid gap-8 lg:grid-cols-2">
-              {hormonePrograms.map((program) => (
-                <ProgramCard key={program.slug} category="Hormone Health" program={program} />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h2 className="heading-section">Longevity & Wellness</h2>
-            <div className="mt-10 grid gap-8 lg:grid-cols-2">
-              {longevityPrograms.map((program) => (
-                <ProgramCard
-                  key={program.slug}
-                  category="Longevity & Wellness"
-                  program={program}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <p className="eyebrow">Bundles</p>
-            <h2 className="mt-4 heading-section">Signature Wellness Bundles</h2>
-            <p className="mt-4 max-w-3xl text-muted-foreground">
-              Physician-designed combinations of therapies created to maximize results through
-              comprehensive wellness.
-            </p>
-            <div className="mt-10 grid gap-8 lg:grid-cols-2">
-              {bundleList.map((bundle) => (
-                <article
-                  key={bundle.slug}
-                  className="rounded-[2rem] border border-border/60 bg-card p-8 md:p-10"
-                >
-                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-sage">
-                    {bundle.category}
-                    {bundle.ribbon && (
-                      <span className="ml-2 text-gold">{bundle.ribbon}</span>
-                    )}
-                  </p>
-                  <h3 className="mt-5 font-serif text-3xl text-forest">{bundle.name}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground">{bundle.subtitle}</p>
-                  <p className="mt-4 text-sm text-forest">
-                    Includes {bundle.includesTags.join(" + ")}
-                  </p>
-                  <p className="mt-6 font-serif text-3xl text-forest">
-                    $ {bundle.price}
-                    <span className="font-sans text-xs uppercase text-muted-foreground">
-                      /mo
-                    </span>
-                  </p>
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    <Link href={siteConfig.assessmentUrl} className="btn-primary">
-                      Start Your Private Assessment
-                    </Link>
-                    <Link href={`/bundles/${bundle.slug}`} className="btn-outline">
-                      Explore {bundle.name}
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <p className="mt-8 text-xs leading-relaxed text-sage">
-              Bundles describe programs of care, not guaranteed prescriptions. Every therapy is
-              reviewed and approved by a licensed healthcare provider and dispensed only when
-              clinically appropriate.
-            </p>
           </div>
 
           <div>
@@ -265,7 +145,7 @@ export default function AllTreatmentsPage() {
               Start with the goal, not the molecule. Your provider will confirm the right path
               during your assessment.
             </p>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid gap-4 sm:grid-cols-2">
               {compareItems.map((item) => (
                 <Link
                   key={item.href}
@@ -303,7 +183,8 @@ export default function AllTreatmentsPage() {
             Your health deserves more than one-size-fits-all care.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-primary-foreground/75">
-            Take the first step toward personalized, physician-guided wellness with Nautic Health.
+            Take the first step toward personalized, physician-guided weight management with
+            Nautic Health.
           </p>
           <Link href={siteConfig.assessmentUrl} className="btn-primary mt-10 inline-flex">
             Start Your Private Assessment

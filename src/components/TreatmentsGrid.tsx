@@ -1,21 +1,11 @@
 import Link from "next/link";
-import {
-  Dna,
-  Hourglass,
-  Scale,
-  Sparkles,
-  Zap,
-  type LucideIcon,
-} from "lucide-react";
+import { Hourglass, Scale, type LucideIcon } from "lucide-react";
 import LeafDecorations from "@/components/LeafDecorations";
 import { treatmentCategories, type TreatmentCategoryIcon } from "@/lib/data";
 
 const iconMap: Record<TreatmentCategoryIcon, LucideIcon> = {
   scale: Scale,
   hourglass: Hourglass,
-  zap: Zap,
-  sparkles: Sparkles,
-  dna: Dna,
 };
 
 export default function TreatmentsGrid() {
@@ -33,12 +23,12 @@ export default function TreatmentsGrid() {
             <em className="italic">personalized to you.</em>
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Structured, physician-guided programs for the outcomes that matter
-            most. Not a single product — a partnership.
+            Structured, physician-guided Semaglutide and Tirzepatide programs for
+            sustainable weight management. Not a single product — a partnership.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:max-w-3xl">
           {treatmentCategories.map((category) => {
             const Icon = iconMap[category.icon];
             return (

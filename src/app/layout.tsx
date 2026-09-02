@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    "A modern longevity practice for people who invest in their long-term health. Physician-guided weight loss, hormones, and longevity care.",
+    "A modern longevity practice for people who invest in their long-term health. Physician-guided Semaglutide and Tirzepatide weight-management care.",
   authors: [{ name: "Nautic Health" }],
   icons: {
     icon: brandAssets.favicon,

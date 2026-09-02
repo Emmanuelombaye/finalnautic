@@ -25,57 +25,28 @@ export const navLinks = [
 ];
 
 export const footerCareLinks = [
+  { label: "Semaglutide", href: "/programs/medical-weight-loss" },
+  { label: "Tirzepatide", href: "/programs/advanced-weight-loss" },
   { label: "Weight Management", href: "/treatments/weight-management" },
-  { label: "Hormone Health", href: "/treatments/hormone-health" },
-  { label: "Energy & Longevity", href: "/treatments/energy-longevity" },
-  { label: "Recovery & Performance", href: "/treatments/recovery-performance" },
-  { label: "Cognitive Wellness", href: "/treatments/cognitive-wellness" },
-  { label: "Overall Optimization", href: "/treatments/overall-optimization" },
   { label: "View All Treatments", href: "/treatments/all" },
 ];
 
-export type TreatmentCategoryIcon =
-  | "scale"
-  | "hourglass"
-  | "zap"
-  | "sparkles"
-  | "dna";
+export type TreatmentCategoryIcon = "scale" | "hourglass";
 
 export const treatmentCategories = [
   {
-    title: "Medical Weight Loss",
+    title: "Semaglutide",
     description:
-      "Physician-guided metabolic restoration for sustainable, healthy weight.",
-    href: "/treatments",
+      "Physician-guided weight management at $179/mo, including semaglutide when clinically appropriate.",
+    href: "/programs/medical-weight-loss",
     icon: "scale" as TreatmentCategoryIcon,
   },
   {
-    title: "Longevity",
+    title: "Tirzepatide",
     description:
-      "Advanced diagnostics and interventions designed to extend healthspan.",
-    href: "/treatments",
+      "Advanced physician-guided weight management at $249/mo, including tirzepatide when clinically appropriate.",
+    href: "/programs/advanced-weight-loss",
     icon: "hourglass" as TreatmentCategoryIcon,
-  },
-  {
-    title: "Recovery",
-    description:
-      "Precision protocols for energy, sleep, and physical resilience.",
-    href: "/treatments",
-    icon: "zap" as TreatmentCategoryIcon,
-  },
-  {
-    title: "Hair & Skin",
-    description:
-      "Inside-out aesthetics for radiant skin, fuller hair, and confident aging.",
-    href: "/treatments",
-    icon: "sparkles" as TreatmentCategoryIcon,
-  },
-  {
-    title: "Hormone Optimization",
-    description:
-      "Personalized hormone balancing for clarity, vitality, and emotional balance.",
-    href: "/treatments",
-    icon: "dna" as TreatmentCategoryIcon,
   },
 ];
 
@@ -87,37 +58,7 @@ export const treatmentCategoryPages: Record<
     eyebrow: "Weight Management",
     title: "Physician-Guided Weight Management",
     description:
-      "Explore personalized weight-management programs designed around your goals, medical history, and provider evaluation.",
-  },
-  "hormone-health": {
-    eyebrow: "Hormone Health",
-    title: "Hormone Health",
-    description:
-      "Individualized hormone care focused on health, vitality, and overall well-being.",
-  },
-  "energy-longevity": {
-    eyebrow: "Energy & Longevity",
-    title: "Energy & Longevity",
-    description:
-      "Physician-guided longevity support for patients interested in energy, cellular wellness, and healthy aging.",
-  },
-  "recovery-performance": {
-    eyebrow: "Recovery & Performance",
-    title: "Recovery & Performance",
-    description:
-      "Precision protocols for energy, sleep, and physical resilience.",
-  },
-  "cognitive-wellness": {
-    eyebrow: "Cognitive Wellness",
-    title: "Cognitive Wellness",
-    description:
-      "Support for clarity, focus, and cognitive wellness as part of a broader longevity plan.",
-  },
-  "overall-optimization": {
-    eyebrow: "Overall Optimization",
-    title: "Overall Optimization",
-    description:
-      "Explore more comprehensive physician-guided approaches for individuals with multiple wellness goals.",
+      "Explore personalized weight-management programs designed around your goals, medical history, and provider evaluation — Semaglutide or Tirzepatide.",
   },
 };
 
@@ -126,7 +67,7 @@ export const howItWorksSteps = [
     step: "01",
     title: "Explore Nautic Health treatments and programs",
     description:
-      "Browse physician-guided options by goal — weight management, hormone health, energy, recovery, and more.",
+      "Browse physician-guided Semaglutide and Tirzepatide programs for weight management.",
   },
   {
     step: "02",
@@ -162,7 +103,7 @@ export const journeySteps = [
   {
     step: "01",
     title: "Choose your treatment or program",
-    description: "Explore options based on your health and wellness goals.",
+    description: "Explore Semaglutide or Tirzepatide based on your weight-management goals.",
     image: journeyImages.goal,
     imageAlt: "Choose your treatment or program",
   },

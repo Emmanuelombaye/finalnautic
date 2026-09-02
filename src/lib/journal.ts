@@ -28,17 +28,17 @@ export const journalPosts: JournalPost[] = [
     ],
   },
   {
-    slug: "the-science-behind-nad",
-    title: "The Science Behind NAD+",
+    slug: "understanding-semaglutide",
+    title: "Understanding Semaglutide",
     description:
-      "A clear look at the coenzyme behind cellular energy production, what declines with age, and how clinicians think about supporting it.",
-    section: "Energy & Vitality",
+      "What semaglutide does in a physician-guided weight-management plan, why oversight matters, and how it differs from tirzepatide.",
+    section: "Weight Management",
     readTime: "7 min read",
     image: journalImages.cellular,
     body: [
-      "NAD+ (nicotinamide adenine dinucleotide) plays a central role in how cells convert nutrients into usable energy. Levels tend to decline with age, which is one reason longevity medicine has taken a sustained interest in the pathway.",
-      "Clinical interest does not mean every patient should supplement. A thoughtful provider weighs goals, history, medications, and whether a given intervention fits a broader plan.",
-      "Nautic Health approaches longevity support with the same discipline applied to every treatment category: diagnostics first, individualized decisions, and ongoing oversight.",
+      "Semaglutide is a GLP-1 receptor agonist used in physician-guided weight management when a licensed provider determines it is clinically appropriate.",
+      "At Nautic Health it is never a standalone product. It sits inside a broader plan that includes nutrition, movement, sleep, diagnostics, and ongoing clinical review.",
+      "Eligibility, dosing, and monitoring are determined only after a provider reviews your history, medications, and relevant laboratory results. Prescriptions are never guaranteed.",
     ],
   },
   {

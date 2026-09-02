@@ -60,4 +60,4 @@ Optional: run `npm run assets` locally and commit `public/assets/` if you want a
 
 ## Customization
 
-Treatment data lives in `src/lib/data.ts`. Update pricing, copy, and branding there.
+Treatment data lives in `src/lib/programs.ts`. Update pricing, copy, and branding there.

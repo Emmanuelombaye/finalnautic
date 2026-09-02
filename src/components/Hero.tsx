@@ -19,11 +19,11 @@ export default function Hero() {
           </span>
 
           <h1 className="mt-7 font-serif text-balance text-[2.15rem] leading-[1.08] tracking-[-0.01em] text-white sm:text-5xl lg:text-[3.6rem]">
-            Physician-Guided Weight Loss, Hormones, and Longevity Care
+            Physician-Guided Weight Loss Care
           </h1>
 
           <p className="mx-auto mt-6 max-w-3xl text-[0.95rem] leading-relaxed text-white/80 md:text-lg">
-            Personalized medical care designed around your goals, with transparent
+            Personalized medical weight-loss care designed around your goals, with transparent
             monthly pricing, licensed provider review, convenient diagnostics, and
             treatment delivered directly to you when medically appropriate.
           </p>

@@ -8,11 +8,8 @@ const inputClass =
 
 const goals = [
   "Weight Management",
-  "Hormone Health",
-  "Energy & Longevity",
-  "Recovery & Performance",
-  "Cognitive Wellness",
-  "Overall Optimization",
+  "Semaglutide",
+  "Tirzepatide",
   "I'm Not Sure Yet",
 ];
 

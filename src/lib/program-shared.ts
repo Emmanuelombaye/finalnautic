@@ -61,37 +61,6 @@ export const programSteps = [
   },
 ];
 
-export const bundleSteps = [
-  {
-    step: "01",
-    title: "Secure assessment",
-    description: "One intake covering every goal in the program.",
-  },
-  {
-    step: "02",
-    title: "Combined diagnostics",
-    description:
-      "A single panel across metabolic, hormonal, and recovery markers.",
-  },
-  {
-    step: "03",
-    title: "Licensed provider review",
-    description:
-      "Your evaluation may be completed asynchronously or through a live consultation when clinically appropriate or required.",
-  },
-  {
-    step: "04",
-    title: "Treatment determination",
-    description:
-      "If approved, your provider designs one coordinated protocol with therapies sequenced deliberately.",
-  },
-  {
-    step: "05",
-    title: "Monthly optimization",
-    description: "Review, re-test, and refine as the picture changes.",
-  },
-];
-
 export const pricingIncludes = [
   "Physician Guided Care",
   "Personalized Treatment Plan",

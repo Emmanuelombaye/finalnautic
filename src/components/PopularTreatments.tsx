@@ -22,11 +22,11 @@ export default function PopularTreatments() {
             Popular Treatments
           </h2>
           <p className="mx-auto mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-            Explore some of our most requested physician-guided treatment options.
+            Explore our physician-guided Semaglutide and Tirzepatide programs.
           </p>
         </div>
 
-        <div className="mt-10 grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mx-auto mt-10 grid max-w-5xl items-stretch gap-6 md:grid-cols-2">
           {popularTreatmentCards.map((card) => {
             const featured = Boolean(card.featured);
             return (

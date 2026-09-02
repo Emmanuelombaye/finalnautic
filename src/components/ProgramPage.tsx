@@ -208,7 +208,7 @@ export default function ProgramPage({ treatment }: { treatment: Treatment }) {
                 Other paths worth <em className="italic">considering</em>
               </h2>
             </div>
-            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-14 grid gap-6 md:grid-cols-2">
               {related.map((r) => (
                 <Link
                   key={r.href}

@@ -3,20 +3,16 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/data";
-import { getBundleBySlug, getProgramByRouteSlug } from "@/lib/programs";
+import { getProgramByRouteSlug } from "@/lib/programs";
 
 export default function MobileStickyBar() {
   const pathname = usePathname();
   const programMatch = pathname.match(/^\/programs\/([^/]+)/);
-  const bundleMatch = pathname.match(/^\/bundles\/([^/]+)/);
   const program = programMatch ? getProgramByRouteSlug(programMatch[1]) : undefined;
-  const bundle = bundleMatch ? getBundleBySlug(bundleMatch[1]) : undefined;
-  const price = program?.price ?? bundle?.price;
+  const price = program?.price;
 
   const onTreatments =
-    pathname.startsWith("/treatments") ||
-    pathname.startsWith("/programs") ||
-    pathname.startsWith("/bundles");
+    pathname.startsWith("/treatments") || pathname.startsWith("/programs");
 
   const pricingLabel = onTreatments ? "View Options" : "View Pricing";
   const pricingHref = onTreatments ? "/treatments/all" : siteConfig.pricingUrl;
