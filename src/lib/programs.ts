@@ -55,8 +55,8 @@ export const programs: Program[] = [
       "A personalized weight-management option designed around your individual goals, medical history, and provider evaluation.",
     tagline: "Physician-guided weight management.",
     image: treatmentImages.semaglutide,
-    imageAlt: "Active couple sharing a relaxed walk along a coastal garden path",
-    heroImage: treatmentImages.semaglutideEditorial,
+    imageAlt: "Physician-guided Semaglutide weight-management care",
+    heroImage: treatmentImages.semaglutide,
     href: "/programs/medical-weight-loss",
     includes: "Includes Semaglutide when clinically appropriate",
     overview: [

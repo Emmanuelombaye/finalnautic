@@ -15,6 +15,20 @@ const LOGO_SPLASH_BG =
 
 const LOGO_INDEX = heroVideos.length;
 
+function shouldUseVideos() {
+  if (typeof window === "undefined") return false;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
+  if (window.matchMedia("(max-width: 768px)").matches) return false;
+  const conn = (
+    navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }
+  ).connection;
+  if (conn?.saveData) return false;
+  if (conn?.effectiveType === "2g" || conn?.effectiveType === "slow-2g") return false;
+  return true;
+}
+
 function shouldMountVideo(index: number, activeIndex: number) {
   if (activeIndex === LOGO_INDEX) {
     return index === 0 || index === heroVideos.length - 1;
@@ -27,9 +41,6 @@ export default function HeroVideoBackground() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [videosEnabled, setVideosEnabled] = useState(false);
   const videosRef = useRef<(HTMLVideoElement | null)[]>([]);
-  const reducedMotion =
-    typeof window !== "undefined" &&
-    window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
   const playVideo = useCallback((index: number) => {
     const video = videosRef.current[index];
@@ -43,21 +54,21 @@ export default function HeroVideoBackground() {
   }, []);
 
   useEffect(() => {
-    if (reducedMotion) return;
+    if (!shouldUseVideos()) return;
 
     let cancelled = false;
     const timer = window.setTimeout(() => {
       if (!cancelled) setVideosEnabled(true);
-    }, 400);
+    }, 1500);
 
     return () => {
       cancelled = true;
       window.clearTimeout(timer);
     };
-  }, [reducedMotion]);
+  }, []);
 
   useEffect(() => {
-    if (reducedMotion || !videosEnabled) return;
+    if (!videosEnabled) return;
 
     let cancelled = false;
     let rotateTimer: number | undefined;
@@ -89,7 +100,7 @@ export default function HeroVideoBackground() {
       if (rotateTimer) window.clearTimeout(rotateTimer);
       if (preloadTimer) window.clearTimeout(preloadTimer);
     };
-  }, [playVideo, reducedMotion, videosEnabled]);
+  }, [playVideo, videosEnabled]);
 
   const showLogo = activeIndex === LOGO_INDEX;
 
@@ -100,13 +111,12 @@ export default function HeroVideoBackground() {
         alt="Green leaves with dew beside premium wellness vials on natural stone"
         fill
         priority
-        quality={70}
+        quality={65}
         sizes="100vw"
         className="object-cover object-[50%_30%]"
       />
 
       {videosEnabled &&
-        !reducedMotion &&
         heroVideos.map((video, index) => {
           if (!shouldMountVideo(index, activeIndex)) return null;
           const isActive = index === activeIndex;
@@ -116,14 +126,14 @@ export default function HeroVideoBackground() {
               ref={(el) => {
                 videosRef.current[index] = el;
               }}
-              className="absolute inset-0 h-full w-full object-cover object-[50%_35%] transition-opacity duration-[1200ms] ease-in-out"
+              className="absolute inset-0 h-full w-full object-cover object-[50%_35%] transition-opacity duration-[1000ms] ease-in-out"
               style={{ opacity: isActive ? 1 : 0 }}
               muted
               playsInline
               loop
               disablePictureInPicture
               autoPlay={index === 0 && activeIndex === 0}
-              preload={isActive ? "auto" : "metadata"}
+              preload={isActive ? "metadata" : "none"}
               aria-label={video.label}
               aria-hidden={!isActive}
             >
@@ -133,7 +143,7 @@ export default function HeroVideoBackground() {
         })}
 
       <div
-        className="absolute inset-0 grid place-items-center transition-opacity duration-[1200ms] ease-in-out"
+        className="absolute inset-0 grid place-items-center transition-opacity duration-[1000ms] ease-in-out"
         style={{
           opacity: showLogo ? 1 : 0,
           background: LOGO_SPLASH_BG,
@@ -146,7 +156,7 @@ export default function HeroVideoBackground() {
           width={300}
           height={89}
           sizes="(max-width: 768px) 220px, 300px"
-          quality={80}
+          quality={75}
           className="w-[220px] opacity-95 md:w-[300px]"
           loading="lazy"
         />

@@ -42,7 +42,7 @@ export const popularTreatmentCards: PopularCard[] = [
     description:
       "A personalized weight-management option designed around your individual goals, medical history, and provider evaluation.",
     image: treatmentImages.semaglutide,
-    imageAlt: "Active couple sharing a relaxed walk along a coastal garden path",
+    imageAlt: "Physician-guided Semaglutide weight-management care",
     href: "/programs/medical-weight-loss",
     cta: "Explore Semaglutide",
   },

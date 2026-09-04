@@ -35,7 +35,7 @@ const files = {
   "public/assets/treatments/tirzepatide.jpg":
     "/__l5e/assets-v1/eab871fb-a7f1-49e3-b2ce-52c0d68a26c8/treatment-editorial-tirzepatide.jpg",
   "public/assets/treatments/semaglutide.jpg":
-    "/__l5e/assets-v1/2c532e02-dc43-47cb-8575-7ed4e826503d/treatment-editorial-overall.jpg",
+    "/__l5e/assets-v1/289557a0-4a62-4332-a69f-21cf246ae264/treatment-editorial-semaglutide.jpg",
   "public/assets/treatments/semaglutide-editorial.jpg":
     "/__l5e/assets-v1/289557a0-4a62-4332-a69f-21cf246ae264/treatment-editorial-semaglutide.jpg",
   "public/assets/treatments/hormone.jpg":
