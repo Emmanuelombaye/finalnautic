@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { journeySteps } from "@/lib/data";
 
+/** Homepage Patient Journey — matches nautichealth.com five-step mockup cards. */
 export default function JourneySection() {
   return (
     <section id="patient-journey" className="container-luxe pb-14 pt-28 md:pb-20 md:pt-40">
@@ -11,7 +12,7 @@ export default function JourneySection() {
           <span className="eyebrow">The Patient Journey</span>
         </span>
         <h2 className="mt-6 text-balance text-4xl leading-[1.05] md:text-5xl">
-          Five steps to <em className="italic">physician-guided care.</em>
+          Five steps to a <em className="italic">better decade.</em>
         </h2>
       </div>
 
@@ -23,10 +24,10 @@ export default function JourneySection() {
               {!isLast && (
                 <>
                   <span
-                    className="absolute left-16 right-[-24px] top-[40%] hidden h-px bg-forest/15 md:block"
+                    className="absolute left-16 right-[-24px] top-1/2 hidden h-px bg-forest/15 md:block"
                     aria-hidden
                   />
-                  <span className="absolute -right-6 top-[40%] z-10 hidden h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-green/30 bg-green/10 text-green shadow-sm md:grid">
+                  <span className="absolute -right-6 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-green/30 bg-green/10 text-green shadow-sm md:grid">
                     <ChevronRight className="h-5 w-5" aria-hidden />
                   </span>
                   <span className="mx-auto -mb-7 mt-1 grid h-8 w-8 place-items-center rounded-full border border-green/30 bg-green/10 text-green shadow-sm md:hidden">
@@ -35,17 +36,17 @@ export default function JourneySection() {
                 </>
               )}
 
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface shadow-[0_16px_40px_-28px_rgba(68,86,74,0.55)]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
                 <Image
                   src={step.image}
                   alt={step.imageAlt}
-                  fill
+                  width={1024}
+                  height={1280}
                   sizes="(max-width: 768px) 100vw, 20vw"
-                  quality={75}
                   priority={index < 2}
-                  className="object-cover object-center"
+                  className="h-full w-full object-cover"
                 />
-                <div className="absolute left-4 top-4 z-[1] grid h-12 w-12 place-items-center rounded-full border border-white/40 bg-black/40 font-serif text-lg text-white backdrop-blur-sm">
+                <div className="absolute left-4 top-4 grid h-12 w-12 place-items-center rounded-full border border-white/40 bg-black/25 font-serif text-lg text-white backdrop-blur-sm">
                   {step.step}
                 </div>
               </div>

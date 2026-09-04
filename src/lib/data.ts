@@ -104,7 +104,7 @@ export const journeySteps = [
     title: "Choose your treatment or program",
     description: "Explore Semaglutide or Tirzepatide based on your weight-management goals.",
     image: journeyImages.goal,
-    imageAlt: "Person walking outdoors on a weight-management journey",
+    imageAlt: "Choose your treatment or program",
   },
   {
     step: "02",
@@ -112,7 +112,7 @@ export const journeySteps = [
     description:
       "Provide the health information needed for a licensed provider to evaluate your eligibility.",
     image: journeyImages.assessment,
-    imageAlt: "Calm clinical setting for a private medical intake",
+    imageAlt: "Complete your medical intake",
   },
   {
     step: "03",
@@ -120,7 +120,7 @@ export const journeySteps = [
     description:
       "Your evaluation may be completed asynchronously or through a live consultation when clinically appropriate.",
     image: journeyImages.review,
-    imageAlt: "Quiet space for thoughtful provider review",
+    imageAlt: "Provider review",
   },
   {
     step: "04",
@@ -128,7 +128,7 @@ export const journeySteps = [
     description:
       "If approved, your provider determines the appropriate treatment plan and next steps.",
     image: journeyImages.consult,
-    imageAlt: "Patients preparing for an active, supported care plan",
+    imageAlt: "Treatment determination",
   },
   {
     step: "05",
@@ -136,7 +136,7 @@ export const journeySteps = [
     description:
       "Receive physician-guided support and follow-up appropriate for your treatment plan.",
     image: journeyImages.support,
-    imageAlt: "Ongoing outdoor activity with continued clinical support",
+    imageAlt: "Ongoing care",
   },
 ];
 
