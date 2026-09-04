@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { footerCareLinks, navLinks, siteConfig } from "@/lib/data";
 import { brandAssets } from "@/lib/media";
+import FooterTrustBadges from "@/components/FooterTrustBadges";
 
 export default function Footer() {
   return (
@@ -19,9 +20,8 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              A modern longevity practice for people who invest in their
-              long-term health. Physician-guided. Personalized. Quiet,
-              considered care.
+              Physician-guided weight management with Semaglutide and Tirzepatide.
+              Personalized care. Licensed provider review. Quiet, considered support.
             </p>
           </div>
 
@@ -57,11 +57,16 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-2">
-            <p className="eyebrow">For Partners</p>
+            <p className="eyebrow">Legal</p>
             <ul className="mt-5 space-y-3 text-sm text-forest/80">
               <li>
-                <Link href="/partners" className="hover:text-forest">
-                  Partners
+                <Link href="/privacy" className="hover:text-forest">
+                  Privacy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-forest">
+                  Terms
                 </Link>
               </li>
             </ul>
@@ -76,6 +81,8 @@ export default function Footer() {
             </p>
           </div>
         </div>
+
+        <FooterTrustBadges />
 
         <div className="hairline my-14" />
 

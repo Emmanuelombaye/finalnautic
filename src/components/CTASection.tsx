@@ -7,7 +7,7 @@ import { sectionAssets } from "@/lib/media";
 export default function CTASection({
   title = (
     <>
-      Your longer, healthier life <em className="italic">starts</em> with an
+      Your weight-management plan <em className="italic">starts</em> with an
       evaluation.
     </>
   ),

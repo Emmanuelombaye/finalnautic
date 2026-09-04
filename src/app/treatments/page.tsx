@@ -95,18 +95,6 @@ export default function TreatmentsPage() {
         </div>
       </section>
 
-      <section className="container-luxe border-t border-border/40 pb-20">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="heading-section">Compare pricing and what&apos;s included</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            See both programs side by side, including monthly pricing and what care includes.
-          </p>
-          <Link href={siteConfig.pricingUrl} className="btn-outline mt-10 inline-flex">
-            View All Treatments
-          </Link>
-        </div>
-      </section>
-
       <section className="border-t border-border/40 py-12">
         <div className="container-luxe max-w-3xl text-center">
           <p className="text-xs leading-relaxed text-sage">

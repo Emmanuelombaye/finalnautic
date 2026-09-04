@@ -10,25 +10,24 @@ import {
 
 export const siteConfig = {
   name: "Nautic Health",
-  tagline: "Personalized Longevity Medicine",
+  tagline: "Physician-Guided Weight Management",
   email: "info@nautichealth.com",
   assessmentUrl: "/assessment",
-  pricingUrl: "/treatments/all",
+  pricingUrl: "/treatments",
 };
 
 export const navLinks = [
   { label: "Treatments", href: "/treatments" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "About", href: "/about" },
-  { label: "Wellness Journal", href: "/journal" },
-  { label: "Patient Portal", href: "/patient-portal" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const footerCareLinks = [
   { label: "Semaglutide", href: "/programs/medical-weight-loss" },
   { label: "Tirzepatide", href: "/programs/advanced-weight-loss" },
-  { label: "Weight Management", href: "/treatments/weight-management" },
-  { label: "View All Treatments", href: "/treatments/all" },
+  { label: "View Pricing", href: "/treatments" },
 ];
 
 export type TreatmentCategoryIcon = "scale" | "hourglass";
@@ -158,9 +157,9 @@ export const whyFeatures = [
       "A concierge care team beside you between visits — discreet, responsive, and genuinely attentive.",
   },
   {
-    title: "Evidence-Based Wellness",
+    title: "Evidence-Based Care",
     description:
-      "Grounded in peer-reviewed longevity science, measured continuously, and refined as your data evolves.",
+      "Grounded in peer-reviewed clinical evidence, measured continuously, and refined as your data evolves.",
   },
 ];
 
@@ -231,7 +230,7 @@ export const philosophyPrinciples = [
   },
   {
     title: "Evidence-based",
-    description: "Rooted in the latest science on longevity and metabolism.",
+    description: "Rooted in current metabolic and clinical science.",
   },
   {
     title: "Personalized",

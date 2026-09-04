@@ -15,7 +15,7 @@ export default function MobileStickyBar() {
     pathname.startsWith("/treatments") || pathname.startsWith("/programs");
 
   const pricingLabel = onTreatments ? "View Options" : "View Pricing";
-  const pricingHref = onTreatments ? "/treatments/all" : siteConfig.pricingUrl;
+  const pricingHref = siteConfig.pricingUrl;
 
   return (
     <div

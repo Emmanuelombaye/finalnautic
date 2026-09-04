@@ -12,7 +12,7 @@ export default function ComparisonSection() {
             <span className="eyebrow">Why Nautic</span>
           </span>
           <h2 className="mt-6 font-serif text-4xl leading-[1.05] text-forest md:text-5xl">
-            A more thoughtful approach to modern wellness care.
+            A more thoughtful approach to modern weight-management care.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
             Nautic Health is designed to combine convenience with clinical context,

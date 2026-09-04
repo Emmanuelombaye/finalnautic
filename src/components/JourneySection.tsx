@@ -11,7 +11,7 @@ export default function JourneySection() {
           <span className="eyebrow">The Patient Journey</span>
         </span>
         <h2 className="mt-6 text-balance text-4xl leading-[1.05] md:text-5xl">
-          Five steps to a <em className="italic">better decade.</em>
+          Five steps to <em className="italic">physician-guided care.</em>
         </h2>
       </div>
 

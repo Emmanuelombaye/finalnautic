@@ -10,7 +10,7 @@ export default function PhilosophySection() {
           <div className="relative order-2 aspect-[4/5] overflow-hidden rounded-3xl md:order-1 md:col-span-6">
             <Image
               src={sectionAssets.philosophy}
-              alt="A quiet morning wellness ritual on a linen-draped table"
+              alt="Quiet morning light on a linen-draped table"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
@@ -22,14 +22,13 @@ export default function PhilosophySection() {
               <span className="eyebrow">Our Philosophy</span>
             </span>
             <h2 className="mt-6 text-balance text-4xl leading-[1.05] md:text-5xl">
-              Health is not the absence of illness. It&apos;s the{" "}
-              <em className="italic">presence of vitality.</em>
+              Weight care should be medical, measured, and{" "}
+              <em className="italic">personal.</em>
             </h2>
             <p className="mt-8 text-base leading-relaxed text-muted-foreground md:text-lg">
-              We believe the most sophisticated form of healthcare is proactive,
-              personalized, and quiet. Not a product to sell. Not a symptom to
-              chase. A partnership — grounded in modern science and respectful of
-              your time — designed to compound over decades.
+              We believe the best weight-management care is physician-guided,
+              transparent, and quiet. Not a product to sell. Not a shortcut to chase.
+              A plan built around your history, your goals, and ongoing clinical review.
             </p>
             <div className="mt-10 grid grid-cols-2 gap-6">
               {philosophyPrinciples.map((item) => (
@@ -54,9 +53,9 @@ export default function PhilosophySection() {
                 <span className="eyebrow text-gold">A quiet promise</span>
               </span>
               <p className="mt-6 text-balance font-serif text-3xl leading-tight text-white md:text-4xl">
-                &ldquo;The most valuable thing we can offer is not another treatment.
-                It&apos;s <em className="italic">a longer life spent well</em> — with
-                the energy, clarity, and resilience to enjoy it.&rdquo;
+                &ldquo;The most valuable thing we can offer is not another product.
+                It&apos;s <em className="italic">careful medical guidance</em> — with
+                clear pricing, licensed review, and support that stays with you.&rdquo;
               </p>
             </div>
             <div className="relative min-h-[380px] md:min-h-full">

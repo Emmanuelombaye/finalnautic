@@ -5,8 +5,8 @@ import WhySection from "@/components/WhySection";
 import DiagnosticsSection from "@/components/DiagnosticsSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import PhilosophySection from "@/components/PhilosophySection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import JourneySection from "@/components/JourneySection";
+import HomeFaqSection from "@/components/HomeFaqSection";
 import CTASection from "@/components/CTASection";
 
 export default function HomePage() {
@@ -19,8 +19,8 @@ export default function HomePage() {
       <DiagnosticsSection />
       <ComparisonSection />
       <PhilosophySection />
-      <TestimonialsSection />
       <JourneySection />
+      <HomeFaqSection />
       <CTASection secondaryLabel="How it works" secondaryHref="/how-it-works" secondaryVariant="ghost" />
     </>
   );

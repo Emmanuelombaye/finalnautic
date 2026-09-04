@@ -13,7 +13,7 @@ export default function Hero() {
           <span className="inline-flex items-center gap-4">
             <span className="h-px w-10 bg-white/40" />
             <span className="text-[0.68rem] uppercase tracking-[0.32em] text-white/75">
-              PHYSICIAN-GUIDED WELLNESS
+              PHYSICIAN-GUIDED CARE
             </span>
             <span className="h-px w-10 bg-white/40" />
           </span>

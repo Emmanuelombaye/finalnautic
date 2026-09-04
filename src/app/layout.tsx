@@ -22,31 +22,27 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.name} — Personalized Longevity Medicine`,
+    default: `${siteConfig.name} — Physician-Guided Weight Management`,
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    "A modern longevity practice for people who invest in their long-term health. Physician-guided Semaglutide and Tirzepatide weight-management care.",
+    "Physician-guided Semaglutide and Tirzepatide weight-management programs with licensed provider review and U.S. pharmacy fulfillment when prescribed.",
   authors: [{ name: "Nautic Health" }],
   icons: {
     icon: brandAssets.favicon,
   },
   openGraph: {
     siteName: "Nautic Health",
-    title: "Nautic Health — Personalized Longevity Medicine",
+    title: "Nautic Health — Physician-Guided Weight Management",
     description:
-      "A modern longevity practice for people who invest in their long-term health.",
+      "Physician-guided Semaglutide and Tirzepatide weight-management programs with licensed provider review.",
     type: "website",
-    url: "https://nautichealth.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nautic Health — Personalized Longevity Medicine",
+    title: "Nautic Health — Physician-Guided Weight Management",
     description:
-      "A modern longevity practice for people who invest in their long-term health.",
-  },
-  alternates: {
-    canonical: "https://nautichealth.com",
+      "Physician-guided Semaglutide and Tirzepatide weight-management programs with licensed provider review.",
   },
 };
 

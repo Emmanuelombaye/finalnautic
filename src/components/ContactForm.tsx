@@ -7,12 +7,9 @@ const inputClass =
   "w-full rounded-full border border-border bg-background px-5 py-3 text-sm text-forest outline-none focus:border-forest/60";
 
 const programOptions = [
-  "Medical Weight Loss",
-  "Longevity Medicine",
-  "Recovery & Performance",
-  "Healthy Aging",
-  "Hair & Skin Optimization",
-  "Personalized Wellness",
+  "Semaglutide",
+  "Tirzepatide",
+  "Weight Management",
   "I'm not sure yet",
 ];
 

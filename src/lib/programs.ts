@@ -75,10 +75,7 @@ export const programs: Program[] = [
       "Patients who want medical oversight rather than a self-directed approach",
       "Anyone seeking a structured, long-view path to healthy weight",
     ],
-    faqs: faqs(
-      { question: "Is this program only about medication?", answer: "No. The program is a comprehensive weight care plan. Physician-guided semaglutide may be included when clinically appropriate, but nutrition, movement, monitoring, and behavioral support are central to the plan." },
-      { question: "Will I definitely be prescribed medication?", answer: "No. Prescriptions are never guaranteed. Your provider determines whether any medication is appropriate after reviewing your history, medications, and laboratory results." }
-    ),
+    faqs: faqs(),
     related: [{ kind: "program", slug: "advanced-weight-loss" }],
   },
   {
@@ -116,9 +113,7 @@ export const programs: Program[] = [
       "Adults who want closely supervised weight care",
       "Anyone seeking a longer-view, medically monitored approach",
     ],
-    faqs: faqs(
-      { question: "How is this different from the Semaglutide program?", answer: "The clinical framework is deeper: expanded diagnostics, closer monitoring, and a different medication pathway when clinically appropriate. Your provider will recommend the pathway that fits your history." }
-    ),
+    faqs: faqs(),
     related: [{ kind: "program", slug: "medical-weight-loss" }],
   },
 ];

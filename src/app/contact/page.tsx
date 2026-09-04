@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Nautic Health with your questions about physician-guided wellness care.",
+  description: "Contact Nautic Health about physician-guided weight-management care.",
 };
 
 export default function ContactPage() {

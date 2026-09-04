@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "A modern longevity clinic built for people who take their health seriously.",
+  description:
+    "Nautic Health provides physician-guided Semaglutide and Tirzepatide weight-management care.",
 };
 
 export default function AboutPage() {
@@ -14,13 +15,12 @@ export default function AboutPage() {
         <div className="container-luxe section-padding pb-16">
           <p className="eyebrow mb-4">About</p>
           <h1 className="heading-display max-w-3xl">
-            A practice built for the next chapter of medicine.
+            Physician-guided weight management, done carefully.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Nautic Health is a modern longevity clinic that partners with adults who take
-            their health seriously. We measure what matters, design plans that hold up over
-            decades, and stay close as your life changes — because meaningful health outcomes
-            are the result of small, consistent decisions made over time.
+            Nautic Health offers physician-guided Semaglutide and Tirzepatide programs.
+            We review your history, design a plan around your goals, and stay close as
+            you progress — with prescriptions issued only when clinically appropriate.
           </p>
         </div>
       </section>
@@ -31,20 +31,18 @@ export default function AboutPage() {
           <h2 className="heading-section">Care that compounds. Quietly.</h2>
           <div className="mt-8 space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
-              Conventional medicine excels at responding to illness. But most of the outcomes
-              we care about — energy, resilience, sharp cognition, a body that moves the way we
-              want it to at 70 — are shaped long before disease appears. Nautic Health was built
-              to occupy that space.
+              Weight management works best when it is medical, measured, and personal.
+              Nautic Health was built to combine licensed provider review with transparent
+              monthly pricing and ongoing clinical support.
             </p>
             <p>
-              We combine advanced diagnostics, physician oversight, and a small, considered set
-              of interventions to help you build a life that ages well. Every plan is tailored to
-              your data and your goals. No gimmicks. No fads. No selling.
+              Every plan starts with your assessment. Nothing is prescribed before a
+              licensed provider reviews your history, medications, and — when indicated —
+              laboratory results.
             </p>
             <p>
-              The result is a practice that feels less like a clinic and more like a trusted
-              advisor — one that respects your time, your intelligence, and the seriousness of
-              what&apos;s at stake.
+              The result is a practice that respects your time, your intelligence, and the
+              seriousness of building sustainable change.
             </p>
           </div>
         </div>
@@ -73,24 +71,12 @@ export default function AboutPage() {
       <section className="section-padding border-t border-border/40">
         <div className="container-luxe max-w-3xl">
           <p className="eyebrow mb-4">The team</p>
-          <h2 className="heading-section">Physicians who think like longevity partners.</h2>
+          <h2 className="heading-section">Licensed providers. Clear decisions.</h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            Our medical team brings together internal medicine, endocrinology, sports medicine,
-            and functional health. What unites us is a belief that the best care is quiet,
-            considered, and deeply personal. Your case is reviewed by a licensed provider who
-            understands your plan.
+            Your case is reviewed by a licensed medical provider. Eligibility, treatment
+            recommendations, and follow-up are clinical decisions — never guaranteed
+            purchases.
           </p>
-          <Link href={siteConfig.assessmentUrl} className="btn-primary mt-10 inline-flex">
-            Start Your Private Assessment
-          </Link>
-        </div>
-      </section>
-
-      <section className="section-padding border-t border-border/40 bg-surface/60">
-        <div className="container-luxe text-center">
-          <h2 className="heading-section mx-auto max-w-2xl">
-            Join a practice designed around the life you want to be living.
-          </h2>
           <Link href={siteConfig.assessmentUrl} className="btn-primary mt-10 inline-flex">
             Start Your Private Assessment
           </Link>
