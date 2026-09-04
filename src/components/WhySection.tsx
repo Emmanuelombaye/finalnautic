@@ -83,7 +83,7 @@ const icons = [PhysicianIcon, PersonalizedIcon, SupportIcon, EvidenceIcon];
 
 export default function WhySection() {
   return (
-    <section className="container-luxe bg-surface/60 pb-28 pt-14 md:pb-40 md:pt-20">
+    <section className="container-luxe bg-surface/60 pb-16 pt-12 md:pb-24 md:pt-16">
       <div className="mx-auto max-w-2xl text-center">
         <span className="inline-flex items-center gap-3">
           <span className="h-px w-6 bg-sage" />
@@ -94,7 +94,7 @@ export default function WhySection() {
         </h2>
       </div>
 
-      <div className="mt-24 grid gap-16 sm:grid-cols-2 md:gap-x-14 md:gap-y-20 lg:grid-cols-4">
+      <div className="mt-12 grid gap-10 sm:grid-cols-2 md:mt-14 md:gap-x-12 md:gap-y-14 lg:grid-cols-4">
         {whyFeatures.map((feature, i) => {
           const Icon = icons[i];
           return (

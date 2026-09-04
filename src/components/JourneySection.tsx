@@ -5,7 +5,7 @@ import { journeySteps } from "@/lib/data";
 /** Homepage Patient Journey — matches nautichealth.com five-step mockup cards. */
 export default function JourneySection() {
   return (
-    <section id="patient-journey" className="container-luxe pb-14 pt-28 md:pb-20 md:pt-40">
+    <section id="patient-journey" className="container-luxe pb-14 pt-14 md:pb-20 md:pt-20">
       <div className="max-w-3xl">
         <span className="inline-flex items-center gap-3">
           <span className="h-px w-6 bg-sage" />
@@ -16,7 +16,7 @@ export default function JourneySection() {
         </h2>
       </div>
 
-      <div className="mt-20 grid gap-10 md:grid-cols-5">
+      <div className="mt-10 grid md:mt-12 grid gap-10 md:grid-cols-5">
         {journeySteps.map((step, index) => {
           const isLast = index === journeySteps.length - 1;
           return (

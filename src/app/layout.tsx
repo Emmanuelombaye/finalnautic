@@ -80,7 +80,7 @@ export default function RootLayout({
       >
         <div className="flex min-h-screen flex-col pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">
           <Header />
-          <main className="flex-1 pt-20">{children}</main>
+          <main className="flex-1 pt-[4.25rem] md:pt-[4.5rem]">{children}</main>
           <Footer />
           <MobileStickyBar />
         </div>

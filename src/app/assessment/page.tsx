@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AssessmentPage() {
   return (
-    <section className="container-luxe max-w-2xl py-20 md:py-28">
+    <section className="container-luxe max-w-2xl py-14 md:py-20">
       <h1 className="text-balance font-serif text-4xl leading-[1.08] text-forest md:text-5xl">
         Private Health Assessment
       </h1>

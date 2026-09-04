@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/data";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] flex items-start justify-center overflow-hidden pt-32 md:h-[100svh] md:min-h-[640px] md:items-center md:pt-0">
+    <section className="relative min-h-[100svh] flex items-start justify-center overflow-hidden pt-24 md:h-[100svh] md:min-h-[640px] md:items-center md:pt-0">
       <HeroVideoBackground />
 
       <div className="relative container-luxe text-center">

@@ -27,7 +27,7 @@ export default function CTASection({
   secondaryVariant?: "outline" | "ghost";
 }) {
   return (
-    <section className="container-luxe py-28 md:py-40">
+    <section className="container-luxe py-12 md:py-16">
       <div className="grid items-center gap-12 md:grid-cols-12">
         <div className="md:col-span-7">
           <span className="inline-flex items-center gap-3">

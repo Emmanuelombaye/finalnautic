@@ -4,7 +4,7 @@ import { comparisonRows, siteConfig } from "@/lib/data";
 
 export default function ComparisonSection() {
   return (
-    <section className="container-luxe py-28 md:py-40">
+    <section className="container-luxe py-12 md:py-16">
       <div className="rounded-[2.5rem] border border-border/60 bg-card p-8 md:p-14">
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-3">

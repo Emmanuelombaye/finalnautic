@@ -22,11 +22,12 @@
   }
 
   .section-padding {
-    @apply py-14 md:py-20;
+    @apply py-10 md:py-14;
   }
 
   .page-hero {
-    @apply border-b border-border/40 bg-background pt-32 lg:pt-40;
+    /* main already offsets the fixed header — keep hero padding tight */
+    @apply border-b border-border/40 bg-background pt-8 md:pt-10;
   }
 
   .eyebrow {

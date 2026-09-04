@@ -24,7 +24,7 @@ export default function ContactPage() {
         />
         <div className="absolute inset-0 bg-forest/55" />
         <div className="relative flex min-h-[60vh] items-end">
-          <div className="container-luxe pb-16 pt-32 md:pb-20">
+          <div className="container-luxe pb-10 pt-16 md:pb-14 md:pt-20">
             <p className="eyebrow mb-4 text-gold">Say hello</p>
             <h1 className="max-w-3xl text-balance font-serif text-5xl leading-[1.05] text-primary-foreground md:text-7xl">
               Your questions are the quiet first step.

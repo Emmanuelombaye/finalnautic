@@ -14,7 +14,7 @@ export default function HowItWorksPage() {
   return (
     <>
       <section className="page-hero">
-        <div className="container-luxe section-padding pb-16">
+        <div className="container-luxe pb-10 md:pb-12">
           <p className="eyebrow mb-4">How it works</p>
           <h1 className="heading-display max-w-3xl">
             Five considered steps to <em className="italic">a better decade.</em>
@@ -26,9 +26,9 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <section className="container-luxe pb-32">
+      <section className="container-luxe pb-16 md:pb-20">
         <div className="grid gap-16 md:grid-cols-12">
-          <div className="md:sticky md:top-28 md:col-span-5 md:h-fit">
+          <div className="md:sticky md:top-24 md:col-span-5 md:h-fit">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-surface">
               <Image
                 src={sectionAssets.clinic}
@@ -63,7 +63,7 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <section className="bg-surface/60 py-24">
+      <section className="bg-surface/60 py-14 md:py-20">
         <div className="container-luxe text-center">
           <p className="eyebrow mb-4">Ready when you are</p>
           <h2 className="heading-section">Begin with a confidential medical intake.</h2>

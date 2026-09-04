@@ -4,7 +4,7 @@ import { homeFaqItems } from "@/lib/faqs";
 
 export default function HomeFaqSection() {
   return (
-    <section id="faqs" className="container-luxe py-28 md:py-40" aria-labelledby="home-faq-title">
+    <section id="faqs" className="container-luxe py-12 md:py-16" aria-labelledby="home-faq-title">
       <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
         <div>
           <h2 id="home-faq-title" className="text-balance text-4xl leading-[1.05] md:text-5xl">

@@ -14,7 +14,7 @@ export default function FaqPage() {
   return (
     <>
       <section className="page-hero">
-        <div className="container-luxe section-padding pb-16">
+        <div className="container-luxe pb-10 md:pb-12">
           <p className="eyebrow mb-4">FAQ</p>
           <h1 className="heading-display max-w-3xl">Frequently asked questions</h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
@@ -30,7 +30,7 @@ export default function FaqPage() {
         </div>
       </section>
 
-      <section className="border-t border-border/40 py-20">
+      <section className="border-t border-border/40 py-14 md:py-16">
         <div className="container-luxe max-w-3xl text-center">
           <h2 className="heading-section">Still have a question?</h2>
           <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground">

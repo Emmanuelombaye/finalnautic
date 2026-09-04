@@ -5,7 +5,7 @@ import { sectionAssets } from "@/lib/media";
 export default function PhilosophySection() {
   return (
     <>
-      <section className="container-luxe py-28 md:py-40">
+      <section className="container-luxe py-12 md:py-16">
         <div className="grid items-center gap-16 md:grid-cols-12">
           <div className="relative order-2 aspect-[4/5] overflow-hidden rounded-3xl md:order-1 md:col-span-6">
             <Image

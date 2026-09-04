@@ -14,7 +14,7 @@ export default function AboutPage() {
   return (
     <>
       <section className="page-hero">
-        <div className="container-luxe section-padding pb-16">
+        <div className="container-luxe pb-10 md:pb-12">
           <p className="eyebrow mb-4">About</p>
           <h1 className="heading-display max-w-3xl">
             Physician-guided weight management, done carefully.
@@ -41,9 +41,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="container-luxe py-28 md:py-40">
-        <div className="grid items-start gap-14 md:grid-cols-12">
-          <div className="md:sticky md:top-28 md:col-span-5 md:h-fit">
+      <section className="container-luxe py-12 md:py-16">
+        <div className="grid items-start gap-10 md:grid-cols-12 md:gap-12">
+          <div className="md:sticky md:top-24 md:col-span-5 md:h-fit">
             <span className="inline-flex items-center gap-3">
               <span className="h-px w-6 bg-sage" />
               <span className="eyebrow">Philosophy</span>
@@ -70,7 +70,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="container-luxe pb-28 md:pb-40">
+      <section className="container-luxe pb-12 md:pb-16">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-3">
             <span className="h-px w-6 bg-sage" />
@@ -80,7 +80,7 @@ export default function AboutPage() {
             Four commitments.
           </h2>
         </div>
-        <div className="mt-16 grid gap-10 md:grid-cols-4">
+        <div className="mt-10 grid gap-10 md:grid-cols-4">
           {aboutPrinciples.map((principle) => (
             <div key={principle.step} className="border-t border-forest/15 pt-6">
               <span className="font-serif text-sm text-gold">{principle.step}</span>
@@ -93,8 +93,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="container-luxe pb-28 md:pb-40">
-        <div className="grid items-center gap-14 md:grid-cols-2">
+      <section className="container-luxe pb-12 md:pb-16">
+        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12">
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-surface">
             <Image
               src={sectionAssets.philosophy}
@@ -124,8 +124,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="container-luxe pb-28 md:pb-40">
-        <div className="relative min-h-[28rem] overflow-hidden rounded-[2.5rem] md:min-h-[32rem]">
+      <section className="container-luxe pb-12 md:pb-16">
+        <div className="relative min-h-[24rem] overflow-hidden rounded-[2.5rem] md:min-h-[28rem]">
           <Image
             src={sectionAssets.couple}
             alt="A couple sharing morning coffee"
@@ -135,7 +135,7 @@ export default function AboutPage() {
             className="object-cover object-[58%_38%] md:object-[62%_40%]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-forest/95 via-forest/65 to-forest/10" />
-          <div className="relative flex h-full min-h-[28rem] flex-col justify-center p-10 text-primary-foreground md:min-h-[32rem] md:p-16 md:max-w-xl">
+          <div className="relative flex h-full min-h-[24rem] flex-col justify-center p-8 text-primary-foreground md:min-h-[28rem] md:p-12 md:max-w-xl">
             <span className="eyebrow text-gold">Begin</span>
             <h2 className="mt-6 font-serif text-4xl leading-tight md:text-5xl">
               Ready when you are.

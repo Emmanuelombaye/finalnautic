@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/40 bg-background transition-all duration-700 ease-out">
-      <div className="container-luxe grid grid-cols-[minmax(0,1fr)_auto] items-center gap-6 py-6 transition-all duration-700 ease-out lg:flex lg:justify-between">
+      <div className="container-luxe grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-3.5 transition-all duration-700 ease-out lg:flex lg:justify-between">
         <Link
           href="/"
           aria-label="Nautic Health home"
@@ -22,9 +22,9 @@ export default function Header() {
             alt="Nautic Health"
             width={320}
             height={95}
-            sizes="200px"
+            sizes="160px"
             quality={80}
-            className="h-16 w-auto shrink-0 transition-all duration-700 ease-out"
+            className="h-11 w-auto shrink-0 transition-all duration-700 ease-out md:h-12"
             priority
           />
         </Link>

@@ -6,7 +6,7 @@ import { popularTreatmentCards } from "@/lib/catalog";
 export default function PopularTreatments() {
   return (
     <section
-      className="bg-surface/40 py-18 md:py-24"
+      className="bg-surface/40 py-14 md:py-20"
       aria-labelledby="popular-treatments-title"
     >
       <div className="container-luxe">

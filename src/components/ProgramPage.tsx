@@ -81,7 +81,7 @@ export default function ProgramPage({ treatment }: { treatment: Treatment }) {
         </Link>
       </div>
 
-      <section className="container-luxe py-20 md:py-28">
+      <section className="container-luxe py-14 md:py-20">
         <span className="inline-flex items-center gap-3">
           <span className="h-px w-6 bg-sage" />
           <span className="eyebrow">Overview</span>
@@ -98,7 +98,7 @@ export default function ProgramPage({ treatment }: { treatment: Treatment }) {
         </div>
       </section>
 
-      <section className="bg-surface/50 py-20 md:py-28">
+      <section className="bg-surface/50 py-14 md:py-20">
         <div className="container-luxe">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-3">
@@ -126,7 +126,7 @@ export default function ProgramPage({ treatment }: { treatment: Treatment }) {
         </div>
       </section>
 
-      <section className="container-luxe py-20 md:py-28">
+      <section className="container-luxe py-14 md:py-20">
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-3">
             <span className="h-px w-6 bg-sage" />
@@ -156,7 +156,7 @@ export default function ProgramPage({ treatment }: { treatment: Treatment }) {
         </ol>
       </section>
 
-      <section className="bg-surface/50 py-20 md:py-28">
+      <section className="bg-surface/50 py-14 md:py-20">
         <div className="container-luxe">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-3">
@@ -184,7 +184,7 @@ export default function ProgramPage({ treatment }: { treatment: Treatment }) {
         </div>
       </section>
 
-      <section className="container-luxe py-20 md:py-28">
+      <section className="container-luxe py-14 md:py-20">
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-3">
             <span className="h-px w-6 bg-sage" />
@@ -198,7 +198,7 @@ export default function ProgramPage({ treatment }: { treatment: Treatment }) {
       </section>
 
       {related.length > 0 && (
-        <section className="bg-surface/50 py-20 md:py-28">
+        <section className="bg-surface/50 py-14 md:py-20">
           <div className="container-luxe">
             <div className="max-w-3xl">
               <span className="inline-flex items-center gap-3">
@@ -235,7 +235,7 @@ export default function ProgramPage({ treatment }: { treatment: Treatment }) {
         </section>
       )}
 
-      <section className="container-luxe pb-6 pt-20 md:pt-28">
+      <section className="container-luxe pb-6 pt-12 md:pt-16">
         <div className="mx-auto max-w-3xl rounded-[1.75rem] border border-border/60 bg-surface/60 p-8 md:p-10">
           <p className="text-[0.68rem] font-medium uppercase tracking-[0.22em] text-forest/70">
             Medical Disclaimer
@@ -246,8 +246,8 @@ export default function ProgramPage({ treatment }: { treatment: Treatment }) {
         </div>
       </section>
 
-      <section className="container-luxe pb-28 md:pb-36">
-        <div className="rounded-[2.5rem] bg-forest px-8 py-24 text-center text-primary-foreground md:px-16 md:py-32">
+      <section className="container-luxe pb-16 md:pb-24">
+        <div className="rounded-[2.5rem] bg-forest px-8 py-14 text-center text-primary-foreground md:px-14 md:py-20">
           <span className="eyebrow text-gold">Begin</span>
           <h2 className="mx-auto mt-6 max-w-4xl text-balance text-4xl leading-[1.05] md:text-6xl">
             Begin with an <em className="italic">assessment</em>, not an assumption.

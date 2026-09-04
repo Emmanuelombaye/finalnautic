@@ -6,9 +6,9 @@ import FooterTrustBadges from "@/components/FooterTrustBadges";
 
 export default function Footer() {
   return (
-    <footer className="mt-32 border-t border-border/60 bg-background">
-      <div className="container-luxe py-20">
-        <div className="grid gap-14 md:grid-cols-12">
+    <footer className="mt-16 border-t border-border/60 bg-background md:mt-20">
+      <div className="container-luxe py-12 md:py-14">
+        <div className="grid gap-10 md:grid-cols-12 md:gap-12">
           <div className="md:col-span-4">
             <Link href="/" aria-label="Nautic Health home" className="inline-block">
               <Image

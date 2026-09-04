@@ -28,7 +28,7 @@ export default function TreatmentsGrid() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:max-w-3xl">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:max-w-3xl">
           {treatmentCategories.map((category) => {
             const Icon = iconMap[category.icon];
             return (

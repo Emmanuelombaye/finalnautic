@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function TreatmentsPage() {
   return (
     <>
-      <section className="container-luxe pb-12 pt-20 md:pt-32">
+      <section className="container-luxe pb-12 pt-10 md:pt-14">
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-3">
             <span className="h-px w-6 bg-sage" />
@@ -82,7 +82,7 @@ export default function TreatmentsPage() {
         </div>
       </section>
 
-      <section className="container-luxe border-t border-border/40 py-20">
+      <section className="container-luxe border-t border-border/40 py-14 md:py-16">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="heading-section">Not Sure Where to Start?</h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
