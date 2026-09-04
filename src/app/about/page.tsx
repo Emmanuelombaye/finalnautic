@@ -94,8 +94,18 @@ export default function AboutPage() {
       </section>
 
       <section className="container-luxe pb-28 md:pb-40">
-        <div className="grid items-center gap-14 md:grid-cols-12">
-          <div className="md:col-span-6">
+        <div className="grid items-center gap-14 md:grid-cols-2">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-surface">
+            <Image
+              src={sectionAssets.philosophy}
+              alt="A morning wellness ritual"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={70}
+              className="object-cover object-center"
+            />
+          </div>
+          <div>
             <span className="inline-flex items-center gap-3">
               <span className="h-px w-6 bg-sage" />
               <span className="eyebrow">The team</span>
@@ -110,16 +120,6 @@ export default function AboutPage() {
             <Link href={siteConfig.assessmentUrl} className="btn-primary mt-10 inline-flex">
               Start Your Private Assessment
             </Link>
-          </div>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-surface md:col-span-6">
-            <Image
-              src={sectionAssets.philosophy}
-              alt="Quiet morning light on a linen-draped table"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              quality={70}
-              className="object-cover object-center"
-            />
           </div>
         </div>
       </section>
