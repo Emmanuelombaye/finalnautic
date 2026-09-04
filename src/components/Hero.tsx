@@ -28,7 +28,7 @@ export default function Hero() {
             treatment delivered directly to you when medically appropriate.
           </p>
 
-          <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+          <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 px-1 sm:flex-row sm:items-center sm:px-0">
             <Link href={siteConfig.assessmentUrl} className="btn-primary w-full sm:w-auto">
               Start Your Private Assessment
             </Link>

@@ -73,7 +73,7 @@ export default function DiagnosticsSection() {
             <Link href={siteConfig.assessmentUrl} className="btn-primary">
               Start Your Private Assessment
             </Link>
-            <Link href="/how-it-works" className="btn-ghost">
+            <Link href="/how-it-works" className="btn-outline">
               Learn About At-Home Testing
             </Link>
           </div>

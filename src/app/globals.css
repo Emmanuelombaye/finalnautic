@@ -43,19 +43,19 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-gold px-7 py-3.5 text-sm font-medium text-forest transition hover:bg-gold-light;
+    @apply inline-flex items-center justify-center rounded-full bg-gold px-7 py-3.5 text-sm font-medium text-forest transition-all duration-300 ease-out hover:bg-gold-light active:scale-[0.98] active:bg-gold-light touch-manipulation;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-forest/25 px-7 py-3.5 text-sm font-light text-forest transition hover:border-forest hover:bg-forest hover:text-background;
+    @apply relative inline-flex items-center justify-center overflow-hidden rounded-full border border-forest/25 px-7 py-3.5 text-sm font-light text-forest transition-all duration-500 ease-out hover:border-forest hover:bg-forest hover:text-background active:scale-[0.98] active:border-forest active:bg-forest active:text-background touch-manipulation;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center rounded-full border border-white/[0.38] px-7 py-3.5 text-sm font-light text-white transition hover:border-white hover:bg-white/10;
+    @apply inline-flex items-center justify-center rounded-full border border-white/[0.38] px-7 py-3.5 text-sm font-light text-white transition-all duration-300 ease-out hover:border-white hover:bg-white/10 active:scale-[0.98] active:bg-white/15 touch-manipulation;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center rounded-full border border-forest/25 px-7 py-3.5 text-sm font-light text-forest transition hover:border-forest hover:bg-forest hover:text-background;
+    @apply inline-flex items-center justify-center rounded-full border border-forest/25 px-7 py-3.5 text-sm font-light text-forest transition-all duration-500 ease-out hover:border-forest hover:bg-forest hover:text-background active:scale-[0.98] active:border-forest active:bg-forest active:text-background touch-manipulation;
   }
 
   .hairline {

@@ -30,9 +30,9 @@ export default function FooterTrustBadges() {
   ] as const;
 
   return (
-    <div className="mt-10 border-t border-border/40 pt-8 md:mt-12 md:pt-10">
+    <div className="mt-8 border-t border-border/40 pt-8 md:mt-10 md:pt-10">
       <div
-        className="mx-auto grid max-w-4xl grid-cols-3 items-start justify-items-center gap-3 sm:gap-6 md:gap-10"
+        className="mx-auto grid max-w-4xl grid-cols-3 items-start justify-items-center gap-2 sm:gap-6 md:gap-10"
         aria-label="Trust and compliance"
       >
         {badges.map((badge) => {
@@ -82,7 +82,7 @@ export default function FooterTrustBadges() {
         })}
       </div>
 
-      <p className="mx-auto mt-6 max-w-2xl text-center text-[0.7rem] leading-relaxed text-sage md:mt-8">
+      <p className="mx-auto mt-6 max-w-2xl text-center text-[0.68rem] leading-relaxed text-sage md:mt-7">
         Prescriptions are never guaranteed. Treatment is provided only when a licensed
         provider determines it is clinically appropriate. Compounded medications are
         prepared by licensed U.S. pharmacies when prescribed.

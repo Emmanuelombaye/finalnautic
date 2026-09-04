@@ -16,6 +16,7 @@ export default function Header() {
           href="/"
           aria-label="Nautic Health home"
           className="group flex min-w-0 items-center gap-3"
+          onClick={() => setMobileOpen(false)}
         >
           <Image
             src={brandAssets.logo}
@@ -41,13 +42,13 @@ export default function Header() {
         <div className="hidden items-center lg:flex">
           <Link
             href={siteConfig.assessmentUrl}
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-forest/25 px-6 py-2.5 text-[0.74rem] font-light uppercase tracking-[0.16em] text-forest transition-all duration-500 ease-out hover:border-forest hover:shadow-[0_12px_30px_-18px_rgba(68,86,74,0.9)]"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-forest/25 px-6 py-2.5 text-[0.74rem] font-light uppercase tracking-[0.16em] text-forest transition-all duration-500 ease-out hover:border-forest hover:shadow-[0_12px_30px_-18px_rgba(68,86,74,0.9)] active:border-forest active:shadow-[0_12px_30px_-18px_rgba(68,86,74,0.9)] touch-manipulation"
           >
             <span
-              className="absolute inset-0 origin-bottom scale-y-0 bg-forest transition-transform duration-500 ease-out group-hover:scale-y-100"
+              className="absolute inset-0 origin-bottom scale-y-0 bg-forest transition-transform duration-500 ease-out group-hover:scale-y-100 group-active:scale-y-100"
               aria-hidden
             />
-            <span className="relative transition-colors duration-500 group-hover:text-background">
+            <span className="relative transition-colors duration-500 group-hover:text-background group-active:text-background">
               Start Your Private Assessment
             </span>
           </Link>
@@ -55,7 +56,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 flex-col items-center justify-center justify-self-end rounded-full border border-forest/20 transition-colors duration-500 hover:border-forest/50 lg:hidden"
+          className="inline-flex h-10 w-10 flex-col items-center justify-center justify-self-end rounded-full border border-forest/20 transition-colors duration-500 hover:border-forest/50 active:border-forest/50 touch-manipulation lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
           aria-expanded={mobileOpen}
@@ -70,13 +71,13 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-border/40 bg-background lg:hidden">
-          <nav className="container-luxe flex flex-col gap-4 py-6">
+        <div className="max-h-[calc(100svh-4.5rem)] overflow-y-auto border-t border-border/40 bg-background lg:hidden">
+          <nav className="container-luxe flex flex-col py-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-light tracking-[0.06em] text-forest/80"
+                className="border-b border-border/30 py-4 text-sm font-light tracking-[0.06em] text-forest/80 active:text-forest"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -84,7 +85,7 @@ export default function Header() {
             ))}
             <Link
               href={siteConfig.assessmentUrl}
-              className="btn-secondary mt-2 text-center text-xs uppercase tracking-[0.16em]"
+              className="btn-secondary mt-5 mb-4 w-full text-center text-xs uppercase tracking-[0.16em]"
               onClick={() => setMobileOpen(false)}
             >
               Start Your Private Assessment
