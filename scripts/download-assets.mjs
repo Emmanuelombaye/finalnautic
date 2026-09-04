@@ -5,7 +5,7 @@
  * Used by `npm run assets` and optional postinstall on Vercel.
  */
 
-import { createWriteStream, existsSync, mkdirSync } from "fs";
+import { createWriteStream, existsSync, mkdirSync, unlinkSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { get } from "https";
@@ -63,11 +63,12 @@ const files = {
   "public/assets/philosophy/philosophy.jpg": "/assets/philosophy-DxQvW9CP.jpg",
   "public/assets/philosophy/longevity.jpg": "/assets/longevity-C1b8388j.jpg",
   "public/assets/cta/cta-stretch.jpg": "/assets/cta-stretch-real-BQuXPQGF.jpg",
-  "public/assets/journey/journey-goal.jpg": "/assets/journey-goal-CDDjGLt3.jpg",
-  "public/assets/journey/journey-assessment.jpg": "/assets/journey-assessment-CqRN--0_.jpg",
-  "public/assets/journey/journey-review.jpg": "/assets/journey-review-wJWLbzH0.jpg",
-  "public/assets/journey/journey-consult.jpg": "/assets/journey-consult-D9l62zAb.jpg",
-  "public/assets/journey/journey-support.jpg": "/assets/journey-support-BcU8Kk4T.jpg",
+  // Exact live Patient Journey mockups (hashed names = cache-bust + bit-identical to nautichealth.com)
+  "public/assets/journey/journey-goal-CDDjGLt3.jpg": "/assets/journey-goal-CDDjGLt3.jpg",
+  "public/assets/journey/journey-assessment-CqRN--0_.jpg": "/assets/journey-assessment-CqRN--0_.jpg",
+  "public/assets/journey/journey-review-wJWLbzH0.jpg": "/assets/journey-review-wJWLbzH0.jpg",
+  "public/assets/journey/journey-consult-D9l62zAb.jpg": "/assets/journey-consult-D9l62zAb.jpg",
+  "public/assets/journey/journey-support-BcU8Kk4T.jpg": "/assets/journey-support-BcU8Kk4T.jpg",
 };
 
 function download(url, dest) {
@@ -94,11 +95,19 @@ function download(url, dest) {
 }
 
 let failed = 0;
+/** Always refresh these so Vercel never ships stale recompressed journey mockups. */
+const alwaysRefresh = new Set(
+  Object.keys(files).filter((rel) => rel.includes("/journey/"))
+);
+
 for (const [rel, path] of Object.entries(files)) {
   const dest = join(root, rel);
-  if (existsSync(dest)) {
+  if (existsSync(dest) && !alwaysRefresh.has(rel)) {
     console.log(`skip: ${rel}`);
     continue;
+  }
+  if (existsSync(dest) && alwaysRefresh.has(rel)) {
+    unlinkSync(dest);
   }
   const url = `${base}${path}`;
   process.stdout.write(`download: ${rel} ... `);

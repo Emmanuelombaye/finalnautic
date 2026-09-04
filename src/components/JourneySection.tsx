@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { journeySteps } from "@/lib/data";
 
-/** Homepage Patient Journey — matches nautichealth.com five-step mockup cards. */
+/** Homepage Patient Journey — same mockup cards as nautichealth.com. */
 export default function JourneySection() {
   return (
     <section id="patient-journey" className="container-luxe pb-14 pt-14 md:pb-20 md:pt-20">
@@ -16,7 +16,7 @@ export default function JourneySection() {
         </h2>
       </div>
 
-      <div className="mt-10 grid md:mt-12 grid gap-10 md:grid-cols-5">
+      <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-5">
         {journeySteps.map((step, index) => {
           const isLast = index === journeySteps.length - 1;
           return (
@@ -36,7 +36,8 @@ export default function JourneySection() {
                 </>
               )}
 
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+              {/* Warm frame so cream UI mockups stay visible on cream pages */}
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-forest/10 bg-[#e7e2d8] shadow-[0_12px_40px_-28px_rgba(68,86,74,0.55)]">
                 <Image
                   src={step.image}
                   alt={step.imageAlt}

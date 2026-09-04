@@ -44,11 +44,11 @@ export const treatmentImages = {
 
 /** Exact live-site journey UI mockups (homepage Patient Journey). */
 export const journeyImages = {
-  goal: local("/assets/journey/journey-goal.jpg"),
-  assessment: local("/assets/journey/journey-assessment.jpg"),
-  review: local("/assets/journey/journey-review.jpg"),
-  consult: local("/assets/journey/journey-consult.jpg"),
-  support: local("/assets/journey/journey-support.jpg"),
+  goal: local("/assets/journey/journey-goal-CDDjGLt3.jpg"),
+  assessment: local("/assets/journey/journey-assessment-CqRN--0_.jpg"),
+  review: local("/assets/journey/journey-review-wJWLbzH0.jpg"),
+  consult: local("/assets/journey/journey-consult-D9l62zAb.jpg"),
+  support: local("/assets/journey/journey-support-BcU8Kk4T.jpg"),
 } as const;
 
 export const journalImages = {

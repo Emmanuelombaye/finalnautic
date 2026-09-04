@@ -124,6 +124,11 @@ async function main() {
 
     try {
       if (ext === ".jpg" || ext === ".jpeg") {
+        // Keep live Patient Journey mockups bit-identical — recompression washes cream UI into the page.
+        if (relative(assetsRoot, file).split(/[/\\]/)[0] === "journey") {
+          console.log(`skip jpg (journey mockup): ${relative(root, file)}`);
+          continue;
+        }
         await optimizeJpg(file);
         continue;
       }
