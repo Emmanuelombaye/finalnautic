@@ -9,17 +9,15 @@ export const metadata: Metadata = {
 
 export default function AssessmentPage() {
   return (
-    <>
-      <section className="page-hero">
-        <div className="container-luxe section-padding pb-16">
-          <h1 className="heading-display max-w-3xl">Private Health Assessment</h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            Answer a few questions about your goals and health history to help a licensed
-            provider evaluate appropriate next steps.
-          </p>
-        </div>
-      </section>
+    <section className="container-luxe max-w-2xl py-20 md:py-28">
+      <h1 className="text-balance font-serif text-4xl leading-[1.08] text-forest md:text-5xl">
+        Private Health Assessment
+      </h1>
+      <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+        Answer a few questions about your goals and health history to help a licensed provider
+        evaluate appropriate next steps.
+      </p>
       <MultiStepAssessment />
-    </>
+    </section>
   );
 }

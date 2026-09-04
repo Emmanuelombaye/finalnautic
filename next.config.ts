@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const longCache = "public, max-age=31536000, immutable";
+
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
@@ -16,6 +18,31 @@ const nextConfig: NextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  async headers() {
+    return [
+      {
+        source: "/assets/:path*",
+        headers: [{ key: "Cache-Control", value: longCache }],
+      },
+      {
+        source: "/favicon.png",
+        headers: [{ key: "Cache-Control", value: longCache }],
+      },
+      {
+        source: "/_next/static/:path*",
+        headers: [{ key: "Cache-Control", value: longCache }],
+      },
+      {
+        source: "/_next/image",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=2592000, stale-while-revalidate=86400",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

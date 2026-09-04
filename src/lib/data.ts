@@ -64,33 +64,33 @@ export const treatmentCategoryPages: Record<
 export const howItWorksSteps = [
   {
     step: "01",
-    title: "Explore Nautic Health treatments and programs",
+    title: "Choose your treatment or program",
     description:
-      "Browse physician-guided Semaglutide and Tirzepatide programs for weight management.",
+      "Explore Nautic Health Semaglutide and Tirzepatide programs based on your weight-management goals.",
   },
   {
     step: "02",
     title: "Complete your medical intake",
     description:
-      "Share your health history, medications, and goals through a secure assessment designed for provider review.",
+      "Provide the medical information needed for a licensed provider to evaluate your eligibility and determine whether treatment is medically appropriate.",
   },
   {
     step: "03",
     title: "Provider review",
     description:
-      "A licensed provider evaluates your information asynchronously or through a live consultation when clinically appropriate.",
+      "A licensed medical provider reviews your information. Depending on your treatment, medical history, state requirements, and clinical needs, this review may be completed asynchronously or may include a live consultation.",
   },
   {
     step: "04",
     title: "Treatment determination",
     description:
-      "If approved, your provider determines an individualized plan — including prescriptions only when clinically appropriate.",
+      "If treatment is medically appropriate, your provider determines the appropriate treatment plan and prescription.",
   },
   {
     step: "05",
     title: "Ongoing care",
     description:
-      "Receive physician-guided support, monitoring, and follow-up appropriate for your treatment plan.",
+      "Receive ongoing physician-guided support and follow-up as appropriate for your treatment plan.",
   },
 ];
 

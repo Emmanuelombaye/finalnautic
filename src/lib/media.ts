@@ -27,6 +27,7 @@ export const sectionAssets = {
   longevity: local("/assets/philosophy/longevity.webp"),
   ctaStretch: local("/assets/cta/cta-stretch.webp"),
   clinic: local("/assets/pages/clinic.webp"),
+  couple: local("/assets/pages/couple.webp"),
 } as const;
 
 export const treatmentImages = {
@@ -58,7 +59,7 @@ export const journalImages = {
   weight: local("/assets/journal/program-weight.jpg"),
 } as const;
 
-/** Only two hero clips — keeps first paint light vs four ~10MB files. */
+/** Four hero clips; mobile still uses poster-only for speed. */
 export const heroVideos: HeroVideo[] = [
   {
     id: "nature-01",
@@ -70,6 +71,18 @@ export const heroVideos: HeroVideo[] = [
     id: "nature-02",
     src: local("/assets/hero/nh-nature-02.mp4"),
     label: "Premium unbranded wellness vials in a clean minimal setting",
+    objectPosition: "50% 35%",
+  },
+  {
+    id: "nature-03",
+    src: local("/assets/hero/nh-nature-03.mp4"),
+    label: "Wellness vials blended with soft greenery and light reflections",
+    objectPosition: "50% 35%",
+  },
+  {
+    id: "nature-04",
+    src: local("/assets/hero/nh-nature-04.mp4"),
+    label: "A serene composition of water, greenery and wellness vials",
     objectPosition: "50% 35%",
   },
 ];

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import CTASection from "@/components/CTASection";
 import { popularTreatmentCards } from "@/lib/catalog";
 import { siteConfig } from "@/lib/data";
 import type { Metadata } from "next";
@@ -22,11 +21,11 @@ export default function TreatmentsPage() {
             <span className="eyebrow">Treatments</span>
           </span>
           <h1 className="mt-6 text-balance text-5xl leading-[1.02] md:text-7xl">
-            Physician-Guided <em className="italic">Weight Management</em>
+            What Would You Like <em className="italic">Support With?</em>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Two programs. One clinical standard. Explore Semaglutide or Tirzepatide —
-            each reviewed by a licensed provider before anything is prescribed.
+            Two physician-guided programs. Explore Semaglutide or Tirzepatide — each reviewed by a
+            licensed provider before anything is prescribed.
           </p>
           <p className="mt-6 text-[0.68rem] uppercase tracking-[0.2em] text-sage">
             Physician-guided care • Licensed provider review • Personalized treatment decisions
@@ -47,7 +46,7 @@ export default function TreatmentsPage() {
                   alt={card.imageAlt}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  quality={72}
+                  quality={70}
                   className="object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.05]"
                 />
               </div>
@@ -87,8 +86,8 @@ export default function TreatmentsPage() {
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="heading-section">Not Sure Where to Start?</h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            You don&apos;t need to know which program is right for you. Tell us about your
-            goals and health history, and a licensed provider can evaluate appropriate next steps.
+            You don&apos;t need to know which program is right for you. Tell us about your goals and
+            health history, and a licensed provider can evaluate appropriate next steps.
           </p>
           <Link href={siteConfig.assessmentUrl} className="btn-primary mt-10 inline-flex">
             Start Your Private Assessment
@@ -99,14 +98,12 @@ export default function TreatmentsPage() {
       <section className="border-t border-border/40 py-12">
         <div className="container-luxe max-w-3xl text-center">
           <p className="text-xs leading-relaxed text-sage">
-            Treatment is subject to clinical eligibility and jurisdictional availability.
-            Medication is prescribed only when medically appropriate. Program details and
-            medication availability are determined by your provider.
+            Treatment is subject to clinical eligibility and jurisdictional availability. Medication
+            is prescribed only when medically appropriate. Program details and medication
+            availability are determined by your provider.
           </p>
         </div>
       </section>
-
-      <CTASection />
     </>
   );
 }

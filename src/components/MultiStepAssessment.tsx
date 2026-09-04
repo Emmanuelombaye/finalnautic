@@ -1,17 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { siteConfig } from "@/lib/data";
 
 const inputClass =
   "w-full rounded-full border border-border bg-background px-5 py-3 text-sm text-forest outline-none focus:border-forest/60";
 
-const goals = [
-  "Weight Management",
-  "Semaglutide",
-  "Tirzepatide",
-  "I'm Not Sure Yet",
-];
+const goals = ["Weight Management", "Semaglutide", "Tirzepatide", "I'm Not Sure Yet"];
 
 export default function MultiStepAssessment() {
   const [step, setStep] = useState(0);
@@ -21,6 +15,7 @@ export default function MultiStepAssessment() {
   const [loading, setLoading] = useState(false);
 
   const progress = step === 0 ? 20 : step === 1 ? 55 : 90;
+  const progressLabel = step === 0 ? "Goals" : step === 1 ? "About you" : "Details";
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -52,31 +47,30 @@ export default function MultiStepAssessment() {
 
   if (submitted) {
     return (
-      <section className="section-padding border-t border-border/40">
-        <div className="container-luxe max-w-xl">
-          <div className="card-surface p-8 text-center">
-            <h2 className="font-serif text-2xl text-forest">Thank you for your interest</h2>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Your intake has been received. A member of our care team will review your
-              information and follow up with next steps.
-            </p>
-          </div>
-        </div>
-      </section>
+      <div className="mt-12 rounded-[1.75rem] border border-border/60 bg-card p-8 text-center shadow-sm md:p-10">
+        <h2 className="font-serif text-2xl text-forest">Thank you for your interest</h2>
+        <p className="mt-4 text-sm text-muted-foreground">
+          Your intake has been received. A member of our care team will review your information and
+          follow up with next steps.
+        </p>
+      </div>
     );
   }
 
   return (
-    <section className="section-padding border-t border-border/40">
-      <div className="container-luxe max-w-xl">
-        <div className="mb-8 flex items-center justify-between text-sm text-muted-foreground">
-          <span>Goals</span>
-          <span>{progress} %</span>
-        </div>
-        <div className="mb-10 h-px w-full bg-border/60">
-          <div className="h-px bg-gold transition-all" style={{ width: `${progress}%` }} />
-        </div>
+    <div className="mt-12">
+      <div className="mb-3 flex items-center justify-between text-[0.68rem] uppercase tracking-[0.16em] text-muted-foreground">
+        <span>{progressLabel}</span>
+        <span>{progress}%</span>
+      </div>
+      <div className="mb-10 h-1.5 w-full overflow-hidden rounded-full bg-border/50">
+        <div
+          className="h-full rounded-full bg-gold transition-all duration-500"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
 
+      <div className="rounded-[1.75rem] border border-border/60 bg-card p-8 shadow-sm md:p-10">
         {step === 0 && (
           <div>
             <h2 className="font-serif text-3xl text-forest">
@@ -136,7 +130,13 @@ export default function MultiStepAssessment() {
                 <label htmlFor="email" className="eyebrow">
                   Email
                 </label>
-                <input id="email" name="email" type="email" required className={`mt-3 ${inputClass}`} />
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  className={`mt-3 ${inputClass}`}
+                />
               </div>
               <div>
                 <label htmlFor="phone" className="eyebrow">
@@ -190,6 +190,6 @@ export default function MultiStepAssessment() {
           </form>
         )}
       </div>
-    </section>
+    </div>
   );
 }

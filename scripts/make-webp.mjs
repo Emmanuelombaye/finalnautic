@@ -18,6 +18,7 @@ const jobs = [
   ["public/assets/philosophy/longevity.jpg", 1100, 62],
   ["public/assets/cta/cta-stretch.jpg", 1000, 62],
   ["public/assets/pages/clinic.jpg", 1000, 62],
+  ["public/assets/pages/couple.jpg", 1100, 62],
   ["public/assets/diagnostics/tasso-blood-test.png", 1000, 68],
   ["public/assets/treatments/semaglutide.jpg", 1000, 65],
   ["public/assets/treatments/tirzepatide.jpg", 1000, 65],

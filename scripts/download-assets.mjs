@@ -51,6 +51,7 @@ const files = {
   "public/assets/treatments/overall.jpg":
     "/__l5e/assets-v1/2c532e02-dc43-47cb-8575-7ed4e826503d/treatment-editorial-overall.jpg",
   "public/assets/pages/clinic.jpg": "/assets/clinic-DogOTmI9.jpg",
+  "public/assets/pages/couple.jpg": "/assets/couple-QD9nos3L.jpg",
   "public/assets/journal/journal-hero.jpg": "/assets/journal-hero-B1H_daRk.jpg",
   "public/assets/journal/journal-cellular.jpg": "/assets/journal-cellular-D9TQup9d.jpg",
   "public/assets/journal/program-recovery.jpg": "/assets/program-recovery-Cs9g5qEF.jpg",
