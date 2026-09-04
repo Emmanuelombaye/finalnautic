@@ -1,11 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 import { howItWorksSteps, siteConfig } from "@/lib/data";
+import { sectionAssets } from "@/lib/media";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "How It Works",
   description:
-    "Five considered steps to physician-guided weight management with semaglutide or tirzepatide.",
+    "Five clear steps from medical intake and licensed provider review to ongoing, physician-guided care.",
 };
 
 export default function HowItWorksPage() {
@@ -14,7 +16,9 @@ export default function HowItWorksPage() {
       <section className="page-hero">
         <div className="container-luxe section-padding pb-16">
           <p className="eyebrow mb-4">How it works</p>
-          <h1 className="heading-display max-w-3xl">Five considered steps to a better decade.</h1>
+          <h1 className="heading-display max-w-3xl">
+            Five considered steps to <em className="italic">physician-guided care.</em>
+          </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
             The Nautic Health journey is deliberately quiet. We take the time to understand
             you — and then we stay close for the long run.
@@ -22,21 +26,40 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <section className="section-padding border-t border-border/40">
-        <div className="container-luxe max-w-3xl">
-          <div className="space-y-12">
+      <section className="container-luxe pb-28 md:pb-32">
+        <div className="grid gap-14 md:grid-cols-12 md:gap-16">
+          <div className="md:col-span-5 md:sticky md:top-28 md:h-fit">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-surface">
+              <Image
+                src={sectionAssets.clinic}
+                alt="Nautic Health clinic"
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                quality={70}
+                className="object-cover object-center"
+                priority
+              />
+            </div>
+          </div>
+
+          <ol className="md:col-span-7 space-y-14">
             {howItWorksSteps.map((step) => (
-              <div key={step.step} className="flex gap-8">
-                <span className="shrink-0 font-serif text-4xl text-gold/60">{step.step}</span>
+              <li
+                key={step.step}
+                className="grid grid-cols-[auto_1fr] gap-6 border-t border-forest/15 pt-8 md:gap-8"
+              >
+                <span className="font-serif text-4xl leading-none text-gold">{step.step}</span>
                 <div>
-                  <h2 className="font-serif text-2xl text-forest">{step.title}</h2>
+                  <h2 className="text-balance font-serif text-2xl text-forest md:text-3xl">
+                    {step.title}
+                  </h2>
                   <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                     {step.description}
                   </p>
                 </div>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
