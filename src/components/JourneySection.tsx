@@ -23,10 +23,10 @@ export default function JourneySection() {
               {!isLast && (
                 <>
                   <span
-                    className="absolute left-16 right-[-24px] top-1/2 hidden h-px bg-forest/15 md:block"
+                    className="absolute left-16 right-[-24px] top-[40%] hidden h-px bg-forest/15 md:block"
                     aria-hidden
                   />
-                  <span className="absolute -right-6 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-green/30 bg-green/10 text-green shadow-sm md:grid">
+                  <span className="absolute -right-6 top-[40%] z-10 hidden h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-green/30 bg-green/10 text-green shadow-sm md:grid">
                     <ChevronRight className="h-5 w-5" aria-hidden />
                   </span>
                   <span className="mx-auto -mb-7 mt-1 grid h-8 w-8 place-items-center rounded-full border border-green/30 bg-green/10 text-green shadow-sm md:hidden">
@@ -35,16 +35,19 @@ export default function JourneySection() {
                 </>
               )}
 
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+              {/* Explicit size + warm frame so cream UI mockups stay visible on cream pages */}
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-forest/10 bg-[#e7e2d8] shadow-[0_12px_40px_-28px_rgba(68,86,74,0.55)]">
                 <Image
                   src={step.image}
                   alt={step.imageAlt}
-                  fill
+                  width={800}
+                  height={1000}
                   sizes="(max-width: 768px) 100vw, 20vw"
-                  quality={70}
-                  className="object-cover object-center"
+                  quality={80}
+                  className="h-full w-full object-cover object-top"
+                  priority={index < 2}
                 />
-                <div className="absolute left-4 top-4 grid h-12 w-12 place-items-center rounded-full border border-white/40 bg-black/25 font-serif text-lg text-white backdrop-blur-sm">
+                <div className="absolute left-4 top-4 grid h-12 w-12 place-items-center rounded-full border border-white/40 bg-black/35 font-serif text-lg text-white backdrop-blur-sm">
                   {step.step}
                 </div>
               </div>

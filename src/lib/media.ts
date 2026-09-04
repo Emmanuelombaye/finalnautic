@@ -43,11 +43,11 @@ export const treatmentImages = {
 } as const;
 
 export const journeyImages = {
-  goal: local("/assets/journey/journey-goal.webp"),
-  assessment: local("/assets/journey/journey-assessment.webp"),
-  review: local("/assets/journey/journey-review.webp"),
-  consult: local("/assets/journey/journey-consult.webp"),
-  support: local("/assets/journey/journey-support.webp"),
+  goal: local("/assets/journey/journey-goal.jpg"),
+  assessment: local("/assets/journey/journey-assessment.jpg"),
+  review: local("/assets/journey/journey-review.jpg"),
+  consult: local("/assets/journey/journey-consult.jpg"),
+  support: local("/assets/journey/journey-support.jpg"),
 } as const;
 
 export const journalImages = {
