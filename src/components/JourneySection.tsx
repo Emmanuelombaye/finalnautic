@@ -35,19 +35,17 @@ export default function JourneySection() {
                 </>
               )}
 
-              {/* Explicit size + warm frame so cream UI mockups stay visible on cream pages */}
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-forest/10 bg-[#e7e2d8] shadow-[0_12px_40px_-28px_rgba(68,86,74,0.55)]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface shadow-[0_16px_40px_-28px_rgba(68,86,74,0.55)]">
                 <Image
                   src={step.image}
                   alt={step.imageAlt}
-                  width={800}
-                  height={1000}
+                  fill
                   sizes="(max-width: 768px) 100vw, 20vw"
-                  quality={80}
-                  className="h-full w-full object-cover object-top"
+                  quality={75}
                   priority={index < 2}
+                  className="object-cover object-center"
                 />
-                <div className="absolute left-4 top-4 grid h-12 w-12 place-items-center rounded-full border border-white/40 bg-black/35 font-serif text-lg text-white backdrop-blur-sm">
+                <div className="absolute left-4 top-4 z-[1] grid h-12 w-12 place-items-center rounded-full border border-white/40 bg-black/40 font-serif text-lg text-white backdrop-blur-sm">
                   {step.step}
                 </div>
               </div>

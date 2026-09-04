@@ -4,6 +4,9 @@ const longCache = "public, max-age=31536000, immutable";
 
 const nextConfig: NextConfig = {
   images: {
+    // Already-compressed public WebP/JPG — skip optimizer to avoid blank/broken
+    // renders on Vercel and serve files directly (faster + reliable).
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200],
     imageSizes: [48, 64, 96, 128, 256, 384],

@@ -42,12 +42,16 @@ export const treatmentImages = {
   overall: local("/assets/treatments/overall.jpg"),
 } as const;
 
+/**
+ * Journey step photos — use high-contrast lifestyle images.
+ * (Live site mockup screenshots are cream-on-cream and disappear on #FAF8F3.)
+ */
 export const journeyImages = {
-  goal: local("/assets/journey/journey-goal.jpg"),
-  assessment: local("/assets/journey/journey-assessment.jpg"),
-  review: local("/assets/journey/journey-review.jpg"),
-  consult: local("/assets/journey/journey-consult.jpg"),
-  support: local("/assets/journey/journey-support.jpg"),
+  goal: local("/assets/treatments/tirzepatide.webp"),
+  assessment: local("/assets/pages/clinic.webp"),
+  review: local("/assets/philosophy/philosophy.webp"),
+  consult: local("/assets/cta/cta-stretch.webp"),
+  support: local("/assets/philosophy/longevity.webp"),
 } as const;
 
 export const journalImages = {
