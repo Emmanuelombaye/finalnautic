@@ -1,44 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 220 220" role="img" aria-label="Clinical services via licensed provider network">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 240 240" role="img" aria-label="Clinical services via licensed provider network">
   <defs>
-    <linearGradient id="provider-gold" x1="40" y1="20" x2="180" y2="200" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F3E2A8"/>
-      <stop offset="0.45" stop-color="#C9A227"/>
-      <stop offset="1" stop-color="#8C6A12"/>
+    <linearGradient id="pn-gold" x1="36" y1="18" x2="204" y2="222" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6E7B2"/>
+      <stop offset="0.42" stop-color="#C9A227"/>
+      <stop offset="1" stop-color="#7A5A10"/>
     </linearGradient>
-    <clipPath id="provider-icon-clip">
-      <circle cx="110" cy="110" r="54"/>
-    </clipPath>
-    <path id="provider-top" d="M 24,110 A 86,86 0 0,1 196,110"/>
-    <path id="provider-bot" d="M 24,110 A 86,86 0 0,0 196,110"/>
+    <path id="pn-top" d="M 34,120 A 86,86 0 0,1 206,120"/>
+    <path id="pn-bot" d="M 34,120 A 86,86 0 0,0 206,120"/>
   </defs>
-  <circle cx="110" cy="110" r="108" fill="#071525"/>
-  <circle cx="110" cy="110" r="105" fill="none" stroke="url(#provider-gold)" stroke-width="6"/>
-  <circle cx="110" cy="110" r="97" fill="none" stroke="#E8D5A3" stroke-width="1.35" opacity="0.92"/>
-  <circle cx="110" cy="110" r="56" fill="#0B1B33"/>
-  <circle cx="110" cy="110" r="56" fill="none" stroke="url(#provider-gold)" stroke-width="1.4" opacity="0.45"/>
+  <!-- Outer seal -->
+  <circle cx="120" cy="120" r="118" fill="#102018"/>
+  <circle cx="120" cy="120" r="114" fill="none" stroke="url(#pn-gold)" stroke-width="7"/>
+  <circle cx="120" cy="120" r="104" fill="none" stroke="#E8D5A3" stroke-width="1.5" opacity="0.9"/>
+  <!-- Inner disc -->
+  <circle cx="120" cy="120" r="62" fill="#163024"/>
+  <circle cx="120" cy="120" r="62" fill="none" stroke="url(#pn-gold)" stroke-width="2"/>
 
-  <text fill="#F7F1DE" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" letter-spacing="2.1">
-    <textPath href="#provider-top" xlink:href="#provider-top" startOffset="50%" text-anchor="middle">PROVIDER NETWORK</textPath>
+  <text fill="#F7F1DE" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" letter-spacing="2.4">
+    <textPath href="#pn-top" xlink:href="#pn-top" startOffset="50%" text-anchor="middle">PROVIDER NETWORK</textPath>
   </text>
-  <text fill="#F7F1DE" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="700" letter-spacing="1.15">
-    <textPath href="#provider-bot" xlink:href="#provider-bot" startOffset="50%" text-anchor="middle">LICENSED CLINICIANS</textPath>
+  <text fill="#F7F1DE" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="700" letter-spacing="1.6">
+    <textPath href="#pn-bot" xlink:href="#pn-bot" startOffset="50%" text-anchor="middle">LICENSED CLINICIANS</textPath>
   </text>
 
-  <circle cx="30" cy="110" r="2.1" fill="#E8D5A3"/>
-  <circle cx="190" cy="110" r="2.1" fill="#E8D5A3"/>
+  <circle cx="36" cy="120" r="2.4" fill="#E8D5A3"/>
+  <circle cx="204" cy="120" r="2.4" fill="#E8D5A3"/>
 
-  <g clip-path="url(#provider-icon-clip)">
-    <path d="M110 68 L113.8 80.4 L126.5 82 L113.8 86.4 L110 99 L106.2 86.4 L93.5 82 L106.2 80.4 Z" fill="#F3E2A8"/>
-    <g fill="#0A0F18">
-      <ellipse cx="88" cy="108" rx="7.6" ry="9"/>
-      <path d="M77 148c.8-18 5.6-27 11-27s10.2 9 11 27v4H77z"/>
-      <path d="M78 122h20v7c-2.6 6-7 9.5-10 9.5s-7.4-3.5-10-9.5z"/>
-      <ellipse cx="110" cy="105" rx="8.6" ry="10"/>
-      <path d="M96 152c1.2-22 7-32 14-32s12.8 10 14 32v5H96z"/>
-      <path d="M97 121h26v8.5c-3.4 7.5-8.6 12-13 12s-9.6-4.5-13-12z"/>
-      <ellipse cx="132" cy="108" rx="7.6" ry="9"/>
-      <path d="M121 148c.8-18 5.6-27 11-27s10.2 9 11 27v4h-22z"/>
-      <path d="M122 122h20v7c-2.6 6-7 9.5-10 9.5s-7.4-3.5-10-9.5z"/>
-    </g>
+  <!-- Center: clinicians + star -->
+  <path d="M120 72 L124.2 85.2 L138 87 L124.2 91.6 L120 105 L115.8 91.6 L102 87 L115.8 85.2 Z" fill="#F3E2A8"/>
+  <g fill="#F7F1DE">
+    <ellipse cx="96" cy="118" rx="9" ry="10.5"/>
+    <path d="M83 164c1-20 6.5-30 13-30s12 10 13 30v5H83z"/>
+    <ellipse cx="120" cy="114" rx="10.5" ry="12"/>
+    <path d="M104 168c1.4-24 8-35 16-35s14.6 11 16 35v6h-32z"/>
+    <ellipse cx="144" cy="118" rx="9" ry="10.5"/>
+    <path d="M131 164c1-20 6.5-30 13-30s12 10 13 30v5h-26z"/>
   </g>
 </svg>
