@@ -41,7 +41,8 @@ export default function JourneySection() {
                   alt={step.imageAlt}
                   fill
                   sizes="(max-width: 768px) 100vw, 20vw"
-                  className="object-cover"
+                  quality={70}
+                  className="object-cover object-center"
                 />
                 <div className="absolute left-4 top-4 grid h-12 w-12 place-items-center rounded-full border border-white/40 bg-black/25 font-serif text-lg text-white backdrop-blur-sm">
                   {step.step}

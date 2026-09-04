@@ -8,29 +8,29 @@ export type HeroVideo = {
 const local = (path: string) => path;
 
 export const brandAssets = {
-  logo: local("/assets/brand/nautic-logo.png"),
-  heroPoster: local("/assets/hero/nh-nature-poster.jpg"),
+  logo: local("/assets/brand/nautic-logo.webp"),
+  heroPoster: local("/assets/hero/nh-nature-poster.webp"),
   favicon: local("/favicon.png"),
 } as const;
 
 export const decorativeAssets = {
-  leafSage: local("/assets/decorative/leaf-sage.png"),
-  leafSage2: local("/assets/decorative/leaf-sage-2.png"),
-  leafForest: local("/assets/decorative/leaf-forest.png"),
-  leafGold: local("/assets/decorative/leaf-gold.png"),
+  leafSage: local("/assets/decorative/leaf-sage.webp"),
+  leafSage2: local("/assets/decorative/leaf-sage-2.webp"),
+  leafForest: local("/assets/decorative/leaf-forest.webp"),
+  leafGold: local("/assets/decorative/leaf-gold.webp"),
 } as const;
 
 export const sectionAssets = {
-  tassoBloodTest: local("/assets/diagnostics/tasso-blood-test.png"),
-  philosophy: local("/assets/philosophy/philosophy.jpg"),
-  longevity: local("/assets/philosophy/longevity.jpg"),
-  ctaStretch: local("/assets/cta/cta-stretch.jpg"),
-  clinic: local("/assets/pages/clinic.jpg"),
+  tassoBloodTest: local("/assets/diagnostics/tasso-blood-test.webp"),
+  philosophy: local("/assets/philosophy/philosophy.webp"),
+  longevity: local("/assets/philosophy/longevity.webp"),
+  ctaStretch: local("/assets/cta/cta-stretch.webp"),
+  clinic: local("/assets/pages/clinic.webp"),
 } as const;
 
 export const treatmentImages = {
-  tirzepatide: local("/assets/treatments/tirzepatide.jpg"),
-  semaglutide: local("/assets/treatments/semaglutide.jpg"),
+  tirzepatide: local("/assets/treatments/tirzepatide.webp"),
+  semaglutide: local("/assets/treatments/semaglutide.webp"),
   semaglutideEditorial: local("/assets/treatments/semaglutide-editorial.jpg"),
   hormone: local("/assets/treatments/hormone.jpg"),
   nad: local("/assets/treatments/nad.jpg"),
@@ -41,11 +41,11 @@ export const treatmentImages = {
 } as const;
 
 export const journeyImages = {
-  goal: local("/assets/journey/journey-goal.jpg"),
-  assessment: local("/assets/journey/journey-assessment.jpg"),
-  review: local("/assets/journey/journey-review.jpg"),
-  consult: local("/assets/journey/journey-consult.jpg"),
-  support: local("/assets/journey/journey-support.jpg"),
+  goal: local("/assets/journey/journey-goal.webp"),
+  assessment: local("/assets/journey/journey-assessment.webp"),
+  review: local("/assets/journey/journey-review.webp"),
+  consult: local("/assets/journey/journey-consult.webp"),
+  support: local("/assets/journey/journey-support.webp"),
 } as const;
 
 export const journalImages = {

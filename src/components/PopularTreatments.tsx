@@ -55,7 +55,8 @@ export default function PopularTreatments() {
                     src={card.image}
                     alt={card.imageAlt}
                     fill
-                    sizes="(max-width: 768px) 100vw, 25vw"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={72}
                     className="object-cover transition duration-700 group-hover:scale-[1.035]"
                   />
                   {card.badge && (

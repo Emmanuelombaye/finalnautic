@@ -13,7 +13,8 @@ export default function PhilosophySection() {
               alt="Quiet morning light on a linen-draped table"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
+              quality={72}
+              className="object-cover object-center"
             />
           </div>
           <div className="order-1 md:order-2 md:col-span-6 md:pl-8">
@@ -64,7 +65,8 @@ export default function PhilosophySection() {
                 alt="Man running along a coastal cliff path at dawn"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
+                quality={72}
+                className="object-cover object-[50%_35%]"
               />
             </div>
           </div>

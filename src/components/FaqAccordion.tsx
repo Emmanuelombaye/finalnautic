@@ -11,7 +11,7 @@ export default function FaqAccordion({
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <div className="mt-12 divide-y divide-border/60 border-y border-border/60">
+    <div className="divide-y divide-border/60 border-y border-border/60">
       {items.map((faq, index) => {
         const open = openIndex === index;
         return (

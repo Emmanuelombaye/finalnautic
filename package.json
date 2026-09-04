@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/download-assets.mjs && next build",
+    "build": "node scripts/download-assets.mjs && npm run assets:optimize && next build",
     "start": "next start",
     "lint": "next lint",
     "assets": "node scripts/download-assets.mjs",
+    "assets:optimize": "node scripts/optimize-images.mjs && node scripts/make-webp.mjs",
     "assets:hero": "powershell -ExecutionPolicy Bypass -File scripts/download-hero-assets.ps1"
   },
   "dependencies": {

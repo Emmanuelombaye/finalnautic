@@ -14,8 +14,10 @@ export default function Footer() {
               <Image
                 src={brandAssets.logo}
                 alt="Nautic Health"
-                width={779}
-                height={232}
+                width={320}
+                height={95}
+                sizes="180px"
+                quality={80}
                 className="h-20 w-auto"
               />
             </Link>

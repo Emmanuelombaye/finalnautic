@@ -3,27 +3,30 @@ export type FaqItem = {
   answer: string;
 };
 
-/** Plain LegitScript-style FAQs (modeled on Efexia legitscript). */
+/**
+ * Plain LegitScript-style FAQs — same structure and wording as Efexia legitscript
+ * (homeSections + how-it-works FAQ set), branded for Nautic Health.
+ */
 export const homeFaqItems: FaqItem[] = [
   {
     question: "What is Nautic Health?",
     answer:
-      "Nautic Health is a platform that connects eligible patients with independent U.S.-licensed clinicians for Semaglutide and Tirzepatide weight-management programs. Nautic Health is not a pharmacy. Fulfillment occurs through licensed pharmacy partners only when prescribed.",
+      "Nautic Health is a technology platform that connects eligible patients with independent U.S.-licensed clinicians for weight-management programs. Nautic Health is not a pharmacy. Fulfillment occurs through licensed pharmacy partners only when prescribed.",
   },
   {
     question: "When do I complete my medical intake?",
     answer:
-      "After you begin, you complete a secure medical intake so a licensed provider can review your health history, medications, and goals before any treatment decision.",
+      "After you begin, you finish the secure medical intake and identity-verification steps required for licensed-provider review — before any provider decision and before any fulfillment.",
   },
   {
-    question: "Does completing an assessment guarantee a prescription?",
+    question: "Does purchasing guarantee a prescription?",
     answer:
-      "No. Completing an assessment or starting a program does not guarantee a prescription. A licensed clinician must determine that treatment is medically appropriate before any prescription is issued.",
+      "No. Purchasing or completing intake does not guarantee a prescription. A licensed clinician must determine that treatment is medically appropriate before any prescription is issued.",
   },
   {
     question: "What does the monthly price include?",
     answer:
-      "Program pricing reflects the online clinical consultation, ordinary program support, routine follow-up required by the program, and standard shipping when a prescription is approved. Laboratory testing, expedited shipping, and third-party services are not included unless specifically stated.",
+      "Program pricing reflects the online clinical consultation, standard shipping when a prescription is approved, ordinary program support, and routine follow-up required by the program. Laboratory testing, expedited shipping, and third-party services are not included unless specifically stated.",
   },
   {
     question: "Are the products FDA-approved?",
@@ -33,16 +36,21 @@ export const homeFaqItems: FaqItem[] = [
   {
     question: "How do I cancel a program?",
     answer:
-      "Programs are month-to-month. You may cancel before your next billing date by contacting info@nautichealth.com. Refund eligibility depends on program status and the terms described in our policies.",
+      "You may cancel or manage your program by contacting info@nautichealth.com. Refund eligibility depends on program status and the terms described in our policies.",
   },
 ];
 
-export const fullFaqItems: FaqItem[] = [
-  ...homeFaqItems,
+/** How-it-works style extras (Efexia marketingPages how-it-works FAQ set). */
+export const howItWorksFaqItems: FaqItem[] = [
   {
-    question: "Do I need a live consultation?",
+    question: "Why does the medical intake happen after I begin?",
     answer:
-      "Not always. Provider evaluations may be completed asynchronously or through a live consultation depending on the treatment, your medical history, state requirements, and the provider's clinical judgment.",
+      "Starting a program creates the account your intake is attached to and reserves clinical review capacity. The intake itself is the clinical step — it happens before any provider decision and before any fulfillment.",
+  },
+  {
+    question: "Does paying mean I will receive a prescription?",
+    answer:
+      "No. Purchasing or completing intake does not guarantee a prescription. A licensed clinician must determine that treatment is medically appropriate before any prescription is issued.",
   },
   {
     question: "How long does provider review usually take?",
@@ -52,35 +60,43 @@ export const fullFaqItems: FaqItem[] = [
   {
     question: "What if a provider asks for more information?",
     answer:
-      "You may receive messages requesting clarification or laboratory work before a decision is made. The program cannot move forward until required information is complete.",
+      "You may receive secure messages requesting clarification, photos, or laboratory work before a decision is made. The program cannot move forward until required information is complete.",
   },
   {
     question: "Can I change programs after starting?",
     answer:
-      "If a clinician determines another program is more appropriate, that recommendation is handled through the clinical review process rather than self-switching products.",
+      "If a clinician determines another program is more appropriate, that recommendation is handled through the clinical review process rather than self-switching products after payment.",
   },
   {
-    question: "Is shipping included?",
+    question: "Is shipping really included?",
     answer:
       "Standard shipping is included in the monthly program price when a prescription is approved and fulfilled. Expedited or replacement shipments may not be included unless specifically stated.",
   },
-  {
-    question: "Am I a candidate?",
-    answer:
-      "Candidacy is determined only by a licensed healthcare provider after reviewing your medical history, current medications, and — where indicated — laboratory results. Not every patient will qualify for every therapy.",
-  },
 ];
 
+/** Full FAQ page = home + how-it-works items, deduped by question (Efexia getFullFaqItems). */
+export function getFullFaqItems(): FaqItem[] {
+  const seen = new Set<string>();
+  return [...homeFaqItems, ...howItWorksFaqItems].filter((item) => {
+    if (seen.has(item.question)) return false;
+    seen.add(item.question);
+    return true;
+  });
+}
+
+export const fullFaqItems: FaqItem[] = getFullFaqItems();
+
+/** Program page FAQs — same plain compliance set as Efexia treatment FAQs. */
 export const programFaqs: FaqItem[] = [
   {
-    question: "Does this program guarantee a prescription?",
+    question: "Does purchasing guarantee a prescription?",
     answer:
-      "No. Completing an assessment does not guarantee a prescription. A licensed clinician must determine that treatment is medically appropriate before any prescription is issued.",
+      "No. Purchasing or completing intake does not guarantee a prescription. A licensed clinician must determine that treatment is medically appropriate before any prescription is issued.",
   },
   {
     question: "What does the monthly price include?",
     answer:
-      "Program pricing reflects physician-guided care, ordinary program support, routine follow-up, and standard shipping when a prescription is approved. Laboratory testing and expedited shipping are not included unless specifically stated.",
+      "Program pricing reflects the online clinical consultation, standard shipping when a prescription is approved, ordinary program support, and routine follow-up required by the program. Laboratory testing, expedited shipping, and third-party services are not included unless specifically stated.",
   },
   {
     question: "Do I need a live consultation?",
@@ -88,18 +104,18 @@ export const programFaqs: FaqItem[] = [
       "Not always. Provider evaluations may be completed asynchronously or through a live consultation depending on your medical history, state requirements, and the provider's clinical judgment.",
   },
   {
-    question: "Do I need bloodwork?",
-    answer:
-      "Most programs include baseline laboratory testing so your provider can establish an objective picture before recommending anything, with repeat testing to monitor your response over time.",
-  },
-  {
     question: "Are compounded medications FDA-approved?",
     answer:
       "Compounded medications are not FDA-approved. They may be prescribed for an individual patient when a licensed clinician determines they are clinically appropriate.",
   },
   {
-    question: "How do I cancel?",
+    question: "Is shipping included?",
     answer:
-      "Programs are month-to-month with no long-term commitment. You can cancel before your next billing date by contacting info@nautichealth.com.",
+      "Standard shipping is included in the monthly program price when a prescription is approved and fulfilled. Expedited or replacement shipments may not be included unless specifically stated.",
+  },
+  {
+    question: "How do I cancel a program?",
+    answer:
+      "You may cancel or manage your program by contacting info@nautichealth.com. Refund eligibility depends on program status and the terms described in our policies.",
   },
 ];

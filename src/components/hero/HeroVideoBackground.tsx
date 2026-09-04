@@ -15,8 +15,17 @@ const LOGO_SPLASH_BG =
 
 const LOGO_INDEX = heroVideos.length;
 
+function shouldMountVideo(index: number, activeIndex: number) {
+  if (activeIndex === LOGO_INDEX) {
+    return index === 0 || index === heroVideos.length - 1;
+  }
+  const next = (activeIndex + 1) % (heroVideos.length + 1);
+  return index === activeIndex || index === next;
+}
+
 export default function HeroVideoBackground() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [videosEnabled, setVideosEnabled] = useState(false);
   const videosRef = useRef<(HTMLVideoElement | null)[]>([]);
   const reducedMotion =
     typeof window !== "undefined" &&
@@ -35,6 +44,20 @@ export default function HeroVideoBackground() {
 
   useEffect(() => {
     if (reducedMotion) return;
+
+    let cancelled = false;
+    const timer = window.setTimeout(() => {
+      if (!cancelled) setVideosEnabled(true);
+    }, 400);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [reducedMotion]);
+
+  useEffect(() => {
+    if (reducedMotion || !videosEnabled) return;
 
     let cancelled = false;
     let rotateTimer: number | undefined;
@@ -66,45 +89,48 @@ export default function HeroVideoBackground() {
       if (rotateTimer) window.clearTimeout(rotateTimer);
       if (preloadTimer) window.clearTimeout(preloadTimer);
     };
-  }, [playVideo, reducedMotion]);
+  }, [playVideo, reducedMotion, videosEnabled]);
 
   const showLogo = activeIndex === LOGO_INDEX;
 
   return (
     <div className="absolute inset-0 overflow-hidden bg-forest">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src={brandAssets.heroPoster}
         alt="Green leaves with dew beside premium wellness vials on natural stone"
-        className="absolute inset-0 h-full w-full object-cover object-[50%_30%]"
-        width={1920}
-        height={1280}
-        fetchPriority="high"
+        fill
+        priority
+        quality={70}
+        sizes="100vw"
+        className="object-cover object-[50%_30%]"
       />
 
-      {heroVideos.map((video, index) => {
-        const isActive = !reducedMotion && index === activeIndex;
-        return (
-          <video
-            key={video.id}
-            ref={(el) => {
-              videosRef.current[index] = el;
-            }}
-            className="absolute inset-0 h-full w-full object-cover object-[50%_35%] transition-opacity duration-[1200ms] ease-in-out"
-            style={{ opacity: isActive ? 1 : 0 }}
-            muted
-            playsInline
-            loop
-            disablePictureInPicture
-            autoPlay={index === 0 && !reducedMotion}
-            preload={index <= 1 ? "auto" : "metadata"}
-            aria-label={video.label}
-            aria-hidden={!isActive}
-          >
-            <source src={video.src} type="video/mp4" />
-          </video>
-        );
-      })}
+      {videosEnabled &&
+        !reducedMotion &&
+        heroVideos.map((video, index) => {
+          if (!shouldMountVideo(index, activeIndex)) return null;
+          const isActive = index === activeIndex;
+          return (
+            <video
+              key={video.id}
+              ref={(el) => {
+                videosRef.current[index] = el;
+              }}
+              className="absolute inset-0 h-full w-full object-cover object-[50%_35%] transition-opacity duration-[1200ms] ease-in-out"
+              style={{ opacity: isActive ? 1 : 0 }}
+              muted
+              playsInline
+              loop
+              disablePictureInPicture
+              autoPlay={index === 0 && activeIndex === 0}
+              preload={isActive ? "auto" : "metadata"}
+              aria-label={video.label}
+              aria-hidden={!isActive}
+            >
+              <source src={video.src} type="video/mp4" />
+            </video>
+          );
+        })}
 
       <div
         className="absolute inset-0 grid place-items-center transition-opacity duration-[1200ms] ease-in-out"
@@ -117,8 +143,10 @@ export default function HeroVideoBackground() {
         <Image
           src={brandAssets.logo}
           alt="Nautic Health — Renew. Restore. Thrive."
-          width={779}
-          height={232}
+          width={300}
+          height={89}
+          sizes="(max-width: 768px) 220px, 300px"
+          quality={80}
           className="w-[220px] opacity-95 md:w-[300px]"
           loading="lazy"
         />

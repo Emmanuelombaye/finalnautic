@@ -57,6 +57,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href={brandAssets.heroPoster}
+          type="image/webp"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={brandAssets.logo}
+          type="image/webp"
+          fetchPriority="high"
+        />
+      </head>
       <body
         className={`${inter.variable} ${cormorant.variable} min-h-screen bg-background font-sans text-forest antialiased`}
       >

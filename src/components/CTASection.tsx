@@ -58,13 +58,14 @@ export default function CTASection({
           )}
         </div>
         <div className="md:col-span-5">
-          <div className="aspect-[3/2] overflow-hidden rounded-3xl">
+          <div className="relative aspect-[3/2] overflow-hidden rounded-3xl bg-surface">
             <Image
               src={sectionAssets.ctaStretch}
               alt="A man and a woman stretching together in a sunlit sage-toned studio"
-              width={1536}
-              height={1024}
-              className="h-full w-full object-cover object-center"
+              fill
+              sizes="(max-width: 768px) 100vw, 40vw"
+              quality={72}
+              className="object-cover object-center"
             />
           </div>
         </div>

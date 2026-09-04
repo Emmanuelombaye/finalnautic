@@ -20,8 +20,10 @@ export default function Header() {
           <Image
             src={brandAssets.logo}
             alt="Nautic Health"
-            width={779}
-            height={232}
+            width={320}
+            height={95}
+            sizes="200px"
+            quality={80}
             className="h-16 w-auto shrink-0 transition-all duration-700 ease-out"
             priority
           />

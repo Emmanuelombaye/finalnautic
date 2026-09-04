@@ -47,6 +47,7 @@ export default function TreatmentsPage() {
                   alt={card.imageAlt}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={72}
                   className="object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.05]"
                 />
               </div>

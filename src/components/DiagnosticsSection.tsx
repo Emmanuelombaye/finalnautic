@@ -35,7 +35,8 @@ export default function DiagnosticsSection() {
             alt="Tasso at-home blood collection kit"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
+            quality={70}
+            className="object-cover object-center"
           />
         </div>
 
