@@ -2,7 +2,6 @@ import Hero from "@/components/Hero";
 import TreatmentsGrid from "@/components/TreatmentsGrid";
 import PopularTreatments from "@/components/PopularTreatments";
 import WhySection from "@/components/WhySection";
-import DiagnosticsSection from "@/components/DiagnosticsSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import PhilosophySection from "@/components/PhilosophySection";
 import JourneySection from "@/components/JourneySection";
@@ -16,7 +15,6 @@ export default function HomePage() {
       <TreatmentsGrid />
       <PopularTreatments />
       <WhySection />
-      <DiagnosticsSection />
       <ComparisonSection />
       <PhilosophySection />
       <JourneySection />

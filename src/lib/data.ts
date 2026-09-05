@@ -177,12 +177,6 @@ export const comparisonRows = [
       "Eligible diagnostic information can be incorporated into the provider evaluation and treatment plan",
   },
   {
-    label: "At-Home Testing Options",
-    typical: "Testing may require separate coordination",
-    nautic:
-      "Eligible at-home collection options designed to reduce traditional lab friction",
-  },
-  {
     label: "Continuity of Care",
     typical: "Often centered around access to a specific prescription",
     nautic:

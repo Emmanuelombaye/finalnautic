@@ -24,8 +24,8 @@ export default function Hero() {
 
           <p className="mx-auto mt-6 max-w-3xl text-[0.95rem] leading-relaxed text-white/80 md:text-lg">
             Personalized medical weight-loss care designed around your goals, with transparent
-            monthly pricing, licensed provider review, convenient diagnostics, and
-            treatment delivered directly to you when medically appropriate.
+            monthly pricing, licensed provider review, and treatment delivered directly to you
+            when medically appropriate.
           </p>
 
           <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 px-1 sm:flex-row sm:items-center sm:px-0">
