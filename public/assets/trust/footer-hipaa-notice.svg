@@ -1,45 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 240 240" role="img" aria-label="Data protected, HIPAA compliant">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 220 220" role="img" aria-label="Data protected, HIPAA compliant">
   <defs>
-    <linearGradient id="hipaa-gold" x1="36" y1="18" x2="204" y2="222" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F6E7B2"/>
-      <stop offset="0.42" stop-color="#C9A227"/>
-      <stop offset="1" stop-color="#7A5A10"/>
+    <linearGradient id="hipaa-gold" x1="40" y1="20" x2="180" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3E2A8"/>
+      <stop offset="0.45" stop-color="#C9A227"/>
+      <stop offset="1" stop-color="#8C6A12"/>
     </linearGradient>
-    <path id="hipaa-top" d="M 34,120 A 86,86 0 0,1 206,120"/>
-    <path id="hipaa-bot" d="M 34,120 A 86,86 0 0,0 206,120"/>
+    <path id="hipaa-top" d="M 24,110 A 86,86 0 0,1 196,110"/>
+    <path id="hipaa-bot" d="M 24,110 A 86,86 0 0,0 196,110"/>
   </defs>
-  <circle cx="120" cy="120" r="118" fill="#102018"/>
-  <circle cx="120" cy="120" r="114" fill="none" stroke="url(#hipaa-gold)" stroke-width="7"/>
-  <circle cx="120" cy="120" r="104" fill="none" stroke="#E8D5A3" stroke-width="1.5" opacity="0.9"/>
-  <circle cx="120" cy="120" r="62" fill="#163024"/>
-  <circle cx="120" cy="120" r="62" fill="none" stroke="url(#hipaa-gold)" stroke-width="2"/>
+  <circle cx="110" cy="110" r="108" fill="#071525"/>
+  <circle cx="110" cy="110" r="105" fill="none" stroke="url(#hipaa-gold)" stroke-width="6"/>
+  <circle cx="110" cy="110" r="97" fill="none" stroke="#E8D5A3" stroke-width="1.35" opacity="0.92"/>
+  <circle cx="110" cy="110" r="56" fill="#0B1B33"/>
+  <circle cx="110" cy="110" r="56" fill="none" stroke="url(#hipaa-gold)" stroke-width="1.4" opacity="0.45"/>
 
-  <text fill="#F7F1DE" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" letter-spacing="2.2">
+  <text fill="#F7F1DE" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" letter-spacing="2.05">
     <textPath href="#hipaa-top" xlink:href="#hipaa-top" startOffset="50%" text-anchor="middle">HIPAA COMPLIANT</textPath>
   </text>
-  <text fill="#F7F1DE" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" letter-spacing="2.8">
+  <text fill="#F7F1DE" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" letter-spacing="2.2">
     <textPath href="#hipaa-bot" xlink:href="#hipaa-bot" startOffset="50%" text-anchor="middle">DATA PROTECTED</textPath>
   </text>
 
-  <circle cx="36" cy="120" r="2.4" fill="#E8D5A3"/>
-  <circle cx="204" cy="120" r="2.4" fill="#E8D5A3"/>
+  <circle cx="30" cy="110" r="2.1" fill="#E8D5A3"/>
+  <circle cx="190" cy="110" r="2.1" fill="#E8D5A3"/>
 
-  <!-- Shield + lock — standard telehealth trust glyph -->
+  <!-- Shield + lock — LegitScript-style certification glyph -->
   <path
-    d="M120 78c18 8 34 8 42 8v28c0 28-18 48-42 58-24-10-42-30-42-58V86c8 0 24 0 42-8z"
+    d="M110 74c16 7 30 7 37 7v24c0 24-16 42-37 51-21-9-37-27-37-51V81c7 0 21 0 37-7z"
     fill="#F7F1DE"
   />
   <path
-    d="M120 90c12 5.5 23 5.5 28.5 5.5V118c0 18.5-12 32.5-28.5 39.5-16.5-7-28.5-21-28.5-39.5v-22.5C97 95.5 108 95.5 120 90z"
-    fill="#163024"
+    d="M110 84c11 5 20 5 25 5v18c0 16-10.5 28-25 34-14.5-6-25-18-25-34V89c5 0 14 0 25-5z"
+    fill="#0B1B33"
   />
-  <rect x="110" y="118" width="20" height="16" rx="3" fill="#F3E2A8"/>
+  <rect x="101" y="112" width="18" height="14" rx="2.5" fill="#F3E2A8"/>
   <path
-    d="M114 118v-6a6 6 0 0 1 12 0v6"
+    d="M104.5 112v-5a5.5 5.5 0 0 1 11 0v5"
     fill="none"
     stroke="#F3E2A8"
-    stroke-width="3"
+    stroke-width="2.4"
     stroke-linecap="round"
   />
-  <circle cx="120" cy="125" r="2.2" fill="#163024"/>
+  <circle cx="110" cy="118.5" r="1.6" fill="#0B1B33"/>
 </svg>
