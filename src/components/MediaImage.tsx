@@ -9,9 +9,10 @@ type Props = Omit<ImageProps, "quality"> & {
  * sensible quality, lazy unless priority.
  */
 export default function MediaImage({
-  quality = 75,
+  quality = 65,
   sizes = "(max-width: 768px) 100vw, 50vw",
   alt,
+  loading,
   ...props
 }: Props) {
   return (
@@ -19,6 +20,8 @@ export default function MediaImage({
       alt={alt}
       quality={quality}
       sizes={sizes}
+      loading={loading ?? (props.priority ? undefined : "lazy")}
+      decoding="async"
       {...props}
     />
   );

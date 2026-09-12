@@ -69,10 +69,10 @@ export default function RootLayout({
           type="image/webp"
           fetchPriority="high"
         />
+        {/* Desktop-only hint: browsers still fetch; kept after poster so LCP wins. */}
         {firstHeroVideo ? (
           <link rel="preload" as="video" href={firstHeroVideo} type="video/mp4" />
         ) : null}
-        <link rel="preload" as="image" href={brandAssets.logo} type="image/webp" />
       </head>
       <body
         className={`${inter.variable} ${cormorant.variable} min-h-screen bg-background font-sans text-forest antialiased`}

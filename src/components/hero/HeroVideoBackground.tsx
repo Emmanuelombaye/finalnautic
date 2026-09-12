@@ -9,10 +9,24 @@ const LOGO_SPLASH_BG =
 const LOGO_INDEX = heroVideos.length;
 const CYCLE_LENGTH = heroVideos.length + 1;
 
+function shouldUseVideos() {
+  if (typeof window === "undefined") return false;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
+  // Poster-only on phones — large MP4s dominate first load.
+  if (window.matchMedia("(max-width: 768px)").matches) return false;
+  const conn = (
+    navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }
+  ).connection;
+  if (conn?.saveData) return false;
+  if (conn?.effectiveType === "2g" || conn?.effectiveType === "slow-2g") return false;
+  return true;
+}
+
 /**
- * Exact nautichealth.com hero media carousel:
- * poster under 4 looping clips → logo splash → repeat.
- * Timing: 3400ms rotate / 1200ms fade / 900ms splash lead.
+ * Hero carousel matching nautichealth.com timing, with faster first paint:
+ * poster first, then only mount active + next clip.
  */
 export default function HeroVideoBackground({
   posterSrc = brandAssets.heroPoster,
@@ -20,7 +34,7 @@ export default function HeroVideoBackground({
   posterSrc?: string;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [warmSecond, setWarmSecond] = useState(false);
+  const [videosEnabled, setVideosEnabled] = useState(false);
   const videosRef = useRef<(HTMLVideoElement | null)[]>([]);
   const rotateTimerRef = useRef<number | undefined>(undefined);
   const preloadTimerRef = useRef<number | undefined>(undefined);
@@ -38,13 +52,20 @@ export default function HeroVideoBackground({
     try {
       video.currentTime = 0;
     } catch {
-      /* ignore seek before metadata */
+      /* ignore */
     }
     void video.play().catch(() => undefined);
   }, []);
 
   useEffect(() => {
-    if (reducedMotion) return;
+    if (!shouldUseVideos()) return;
+    // Enable after first paint so the poster isn't blocked by video decode.
+    const id = window.requestAnimationFrame(() => setVideosEnabled(true));
+    return () => window.cancelAnimationFrame(id);
+  }, []);
+
+  useEffect(() => {
+    if (!videosEnabled || reducedMotion) return;
 
     let cancelled = false;
 
@@ -78,47 +99,21 @@ export default function HeroVideoBackground({
       cancelled = true;
       clearTimers();
     };
-  }, [playVideo, reducedMotion]);
-
-  // After first clip is playing, warm the next so the crossfade is seamless
-  // without competing with the first download on open.
-  useEffect(() => {
-    if (reducedMotion) return;
-    const first = videosRef.current[0];
-    if (!first) return;
-
-    const warm = () => {
-      setWarmSecond(true);
-      const second = videosRef.current[1];
-      if (second && second.preload !== "auto") {
-        second.preload = "auto";
-        // Nudge the browser to start fetching once the first clip is underway.
-        try {
-          second.load();
-        } catch {
-          /* ignore */
-        }
-      }
-    };
-
-    const onPlaying = () => warm();
-    if (!first.paused && first.readyState >= 2) {
-      warm();
-      return;
-    }
-    first.addEventListener("playing", onPlaying, { once: true });
-    first.addEventListener("canplay", onPlaying, { once: true });
-    return () => {
-      first.removeEventListener("playing", onPlaying);
-      first.removeEventListener("canplay", onPlaying);
-    };
-  }, [reducedMotion]);
+  }, [playVideo, reducedMotion, videosEnabled]);
 
   const showLogo = activeIndex === LOGO_INDEX;
 
+  const shouldMount = (index: number) => {
+    if (!videosEnabled || reducedMotion) return false;
+    if (activeIndex === LOGO_INDEX) {
+      return index === 0 || index === heroVideos.length - 1;
+    }
+    const next = (activeIndex + 1) % CYCLE_LENGTH;
+    return index === activeIndex || index === next;
+  };
+
   return (
     <div className="absolute inset-0 overflow-hidden bg-forest">
-      {/* Native img like live site — fastest LCP under the videos */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={posterSrc}
@@ -131,10 +126,8 @@ export default function HeroVideoBackground({
       />
 
       {heroVideos.map((video, index) => {
-        const isActive = !reducedMotion && activeIndex === index;
-        const preload =
-          index === 0 ? "auto" : index === 1 && warmSecond ? "auto" : "metadata";
-
+        if (!shouldMount(index)) return null;
+        const isActive = activeIndex === index;
         return (
           <video
             key={video.id}
@@ -148,8 +141,8 @@ export default function HeroVideoBackground({
             loop
             disablePictureInPicture
             controls={false}
-            autoPlay={index === 0 && !reducedMotion}
-            preload={preload}
+            autoPlay={index === 0 && activeIndex === 0}
+            preload={isActive || index === 0 ? "auto" : "metadata"}
             aria-label={video.label}
             aria-hidden={!isActive}
           >

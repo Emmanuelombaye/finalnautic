@@ -14,6 +14,13 @@
   body {
     @apply bg-background font-sans text-forest antialiased;
   }
+
+  /* Skip rendering work for offscreen sections until near viewport */
+  main > section:not(:first-child),
+  main > div > section:not(:first-child) {
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
+  }
 }
 
 @layer components {

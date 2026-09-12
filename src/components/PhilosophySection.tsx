@@ -13,7 +13,9 @@ export default function PhilosophySection() {
               alt="Quiet morning light on a linen-draped table"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              quality={72}
+              quality={60}
+              loading="lazy"
+              decoding="async"
               className="object-cover object-center"
             />
           </div>
@@ -65,7 +67,9 @@ export default function PhilosophySection() {
                 alt="Man running along a coastal cliff path at dawn"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                quality={72}
+                quality={60}
+                loading="lazy"
+                decoding="async"
                 className="object-cover object-[50%_35%]"
               />
             </div>

@@ -44,7 +44,9 @@ export default function JourneySection() {
                   width={1024}
                   height={1280}
                   sizes="(max-width: 768px) 100vw, 20vw"
-                  priority={index < 2}
+                  quality={60}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover"
                 />
                 <div className="absolute left-4 top-4 grid h-12 w-12 place-items-center rounded-full border border-white/40 bg-black/25 font-serif text-lg text-white backdrop-blur-sm">
