@@ -23,6 +23,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   async headers() {
     return [
+      {
         source: "/assets/hero/:path*.mp4",
         headers: [
           { key: "Cache-Control", value: longCache },
