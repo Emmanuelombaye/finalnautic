@@ -1,8 +1,8 @@
 import { brandAssets } from "@/lib/media";
 
 /**
- * Home-only poster preload — same pattern as nautichealth.com
- * (they preload the poster image, not the multi‑MB MP4s).
+ * Home-only poster preload — same as nautichealth.com
+ * (they preload the JPG poster, not the MP4s).
  */
 export default function HomeMediaPreload() {
   return (
@@ -10,7 +10,7 @@ export default function HomeMediaPreload() {
       rel="preload"
       as="image"
       href={brandAssets.heroPoster}
-      type="image/webp"
+      type="image/jpeg"
     />
   );
 }
