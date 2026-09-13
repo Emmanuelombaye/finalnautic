@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileStickyBar from "@/components/MobileStickyBar";
 import { siteConfig } from "@/lib/data";
-import { brandAssets, heroVideos } from "@/lib/media";
+import { brandAssets } from "@/lib/media";
 import "./globals.css";
 
 const inter = Inter({
@@ -57,23 +57,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const firstHeroVideo = heroVideos[0]?.src;
-
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="preload"
-          as="image"
-          href={brandAssets.heroPoster}
-          type="image/webp"
-          fetchPriority="high"
-        />
-        {/* Desktop-only hint: browsers still fetch; kept after poster so LCP wins. */}
-        {firstHeroVideo ? (
-          <link rel="preload" as="video" href={firstHeroVideo} type="video/mp4" />
-        ) : null}
-      </head>
       <body
         className={`${inter.variable} ${cormorant.variable} min-h-screen bg-background font-sans text-forest antialiased`}
       >

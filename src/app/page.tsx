@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import HomeMediaPreload from "@/components/HomeMediaPreload";
 import TreatmentsGrid from "@/components/TreatmentsGrid";
 import PopularTreatments from "@/components/PopularTreatments";
 import WhySection from "@/components/WhySection";
@@ -11,6 +12,7 @@ import CTASection from "@/components/CTASection";
 export default function HomePage() {
   return (
     <>
+      <HomeMediaPreload />
       <Hero />
       <TreatmentsGrid />
       <PopularTreatments />

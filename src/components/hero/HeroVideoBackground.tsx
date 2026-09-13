@@ -11,9 +11,9 @@ const CYCLE_LENGTH = heroVideos.length + 1;
 
 function shouldUseVideos() {
   if (typeof window === "undefined") return false;
+  // Match nautichealth.com: play muted hero videos on all viewports unless
+  // the user prefers reduced motion or is on a very constrained network.
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
-  // Poster-only on phones — large MP4s dominate first load.
-  if (window.matchMedia("(max-width: 768px)").matches) return false;
   const conn = (
     navigator as Navigator & {
       connection?: { saveData?: boolean; effectiveType?: string };
@@ -25,8 +25,8 @@ function shouldUseVideos() {
 }
 
 /**
- * Hero carousel matching nautichealth.com timing, with faster first paint:
- * poster first, then only mount active + next clip.
+ * Hero carousel matching nautichealth.com timing (including mobile video).
+ * Poster paints first; only active + next clips are mounted.
  */
 export default function HeroVideoBackground({
   posterSrc = brandAssets.heroPoster,
