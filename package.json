@@ -8,8 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "assets": "node scripts/download-assets.mjs",
-    "assets:optimize": "node scripts/optimize-images.mjs && node scripts/make-webp.mjs",
-    "assets:hero": "powershell -ExecutionPolicy Bypass -File scripts/download-hero-assets.ps1"
+    "assets:optimize": "node scripts/optimize-images.mjs && node scripts/make-webp.mjs && node scripts/faststart-hero-videos.mjs",
+    "assets:hero": "powershell -ExecutionPolicy Bypass -File scripts/download-hero-assets.ps1",
+    "assets:faststart": "node scripts/faststart-hero-videos.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.469.0",

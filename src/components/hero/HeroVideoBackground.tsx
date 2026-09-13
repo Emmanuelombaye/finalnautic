@@ -9,24 +9,13 @@ const LOGO_SPLASH_BG =
 const LOGO_INDEX = heroVideos.length;
 const CYCLE_LENGTH = heroVideos.length + 1;
 
-function shouldUseVideos() {
-  if (typeof window === "undefined") return false;
-  // Match nautichealth.com: play muted hero videos on all viewports unless
-  // the user prefers reduced motion or is on a very constrained network.
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
-  const conn = (
-    navigator as Navigator & {
-      connection?: { saveData?: boolean; effectiveType?: string };
-    }
-  ).connection;
-  if (conn?.saveData) return false;
-  if (conn?.effectiveType === "2g" || conn?.effectiveType === "slow-2g") return false;
-  return true;
-}
-
 /**
- * Hero carousel matching nautichealth.com timing (including mobile video).
- * Poster paints first; only active + next clips are mounted.
+ * Matches nautichealth.com hero carousel:
+ * - muted autoplay on all viewports
+ * - all clips mounted
+ * - first two preload=auto, rest metadata
+ * - 3400ms rotate / 1200ms fade / logo splash
+ * Only reduced-motion disables video (same practical gate as live).
  */
 export default function HeroVideoBackground({
   posterSrc = brandAssets.heroPoster,
@@ -34,7 +23,6 @@ export default function HeroVideoBackground({
   posterSrc?: string;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [videosEnabled, setVideosEnabled] = useState(false);
   const videosRef = useRef<(HTMLVideoElement | null)[]>([]);
   const rotateTimerRef = useRef<number | undefined>(undefined);
   const preloadTimerRef = useRef<number | undefined>(undefined);
@@ -58,14 +46,7 @@ export default function HeroVideoBackground({
   }, []);
 
   useEffect(() => {
-    if (!shouldUseVideos()) return;
-    // Enable after first paint so the poster isn't blocked by video decode.
-    const id = window.requestAnimationFrame(() => setVideosEnabled(true));
-    return () => window.cancelAnimationFrame(id);
-  }, []);
-
-  useEffect(() => {
-    if (!videosEnabled || reducedMotion) return;
+    if (reducedMotion) return;
 
     let cancelled = false;
 
@@ -99,18 +80,9 @@ export default function HeroVideoBackground({
       cancelled = true;
       clearTimers();
     };
-  }, [playVideo, reducedMotion, videosEnabled]);
+  }, [playVideo, reducedMotion]);
 
   const showLogo = activeIndex === LOGO_INDEX;
-
-  const shouldMount = (index: number) => {
-    if (!videosEnabled || reducedMotion) return false;
-    if (activeIndex === LOGO_INDEX) {
-      return index === 0 || index === heroVideos.length - 1;
-    }
-    const next = (activeIndex + 1) % CYCLE_LENGTH;
-    return index === activeIndex || index === next;
-  };
 
   return (
     <div className="absolute inset-0 overflow-hidden bg-forest">
@@ -126,8 +98,10 @@ export default function HeroVideoBackground({
       />
 
       {heroVideos.map((video, index) => {
-        if (!shouldMount(index)) return null;
         const isActive = activeIndex === index;
+        // Live site: first two clips preload=auto, later clips metadata.
+        const preload =
+          index === 0 || index === 1 || isActive ? "auto" : "metadata";
         return (
           <video
             key={video.id}
@@ -135,16 +109,16 @@ export default function HeroVideoBackground({
               videosRef.current[index] = el;
             }}
             className="absolute inset-0 h-full w-full object-cover object-[50%_35%] transition-opacity duration-[1200ms] ease-in-out"
-            style={{ opacity: isActive ? 1 : 0 }}
+            style={{ opacity: reducedMotion ? 0 : isActive ? 1 : 0 }}
             muted
             playsInline
             loop
             disablePictureInPicture
             controls={false}
-            autoPlay={index === 0 && activeIndex === 0}
-            preload={isActive || index === 0 ? "auto" : "metadata"}
+            autoPlay={index === 0 && !reducedMotion}
+            preload={preload}
             aria-label={video.label}
-            aria-hidden={!isActive}
+            aria-hidden={!isActive || reducedMotion}
           >
             <source src={video.src} type="video/mp4" />
           </video>
