@@ -1,31 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 184" role="img" aria-label="Clinical services via licensed provider network">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 240 240" role="img" aria-label="Clinical services via licensed provider network">
   <defs>
-    <linearGradient id="pn-cyan" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#7AD7F0"/>
-      <stop offset="1" stop-color="#2EB6DE"/>
+    <linearGradient id="pn-gold" x1="36" y1="18" x2="204" y2="222" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6E7B2"/>
+      <stop offset="0.42" stop-color="#C9A227"/>
+      <stop offset="1" stop-color="#7A5A10"/>
     </linearGradient>
+    <path id="pn-top" d="M 34,120 A 86,86 0 0,1 206,120"/>
+    <path id="pn-bot" d="M 34,120 A 86,86 0 0,0 206,120"/>
   </defs>
-  <!-- LegitScript-style vertical hex -->
-  <path
-    d="M80 4 L148 42 L148 142 L80 180 L12 142 L12 42 Z"
-    fill="#051532"
-    stroke="#FFFFFF"
-    stroke-width="3"
-    stroke-linejoin="round"
-  />
-  <!-- Mini hex cluster (LegitScript motif) -->
-  <g transform="translate(56 28) scale(0.55)">
-    <path d="M24 2 L40 11 L40 29 L24 38 L8 29 L8 11 Z" fill="#7AD7F0"/>
-    <path d="M48 18 L64 27 L64 45 L48 54 L32 45 L32 27 Z" fill="#A8E6F5"/>
-    <path d="M0 18 L16 27 L16 45 L0 54 L-16 45 L-16 27 Z" fill="#2EB6DE"/>
-    <path d="M24 34 L40 43 L40 61 L24 70 L8 61 L8 43 Z" fill="#FFFFFF"/>
-  </g>
-  <text x="80" y="92" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="0.4">Provider</text>
-  <text x="80" y="110" text-anchor="middle" fill="#41C1E6" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="0.4">Network</text>
-  <text x="80" y="128" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="500">Licensed</text>
-  <!-- Green hex check -->
-  <g transform="translate(80 154)">
-    <path d="M0 -14 L12 -7 L12 7 L0 14 L-12 7 L-12 -7 Z" fill="#72C043"/>
-    <path d="M-5 0 L-1.5 4 L6 -4" fill="none" stroke="#051532" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Outer seal -->
+  <circle cx="120" cy="120" r="118" fill="#102018"/>
+  <circle cx="120" cy="120" r="114" fill="none" stroke="url(#pn-gold)" stroke-width="7"/>
+  <circle cx="120" cy="120" r="104" fill="none" stroke="#E8D5A3" stroke-width="1.5" opacity="0.9"/>
+  <!-- Inner disc -->
+  <circle cx="120" cy="120" r="62" fill="#163024"/>
+  <circle cx="120" cy="120" r="62" fill="none" stroke="url(#pn-gold)" stroke-width="2"/>
+
+  <text fill="#F7F1DE" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" letter-spacing="2.4">
+    <textPath href="#pn-top" xlink:href="#pn-top" startOffset="50%" text-anchor="middle">PROVIDER NETWORK</textPath>
+  </text>
+  <text fill="#F7F1DE" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="700" letter-spacing="1.6">
+    <textPath href="#pn-bot" xlink:href="#pn-bot" startOffset="50%" text-anchor="middle">LICENSED CLINICIANS</textPath>
+  </text>
+
+  <circle cx="36" cy="120" r="2.4" fill="#E8D5A3"/>
+  <circle cx="204" cy="120" r="2.4" fill="#E8D5A3"/>
+
+  <!-- Center: clinicians + star -->
+  <path d="M120 72 L124.2 85.2 L138 87 L124.2 91.6 L120 105 L115.8 91.6 L102 87 L115.8 85.2 Z" fill="#F3E2A8"/>
+  <g fill="#F7F1DE">
+    <ellipse cx="96" cy="118" rx="9" ry="10.5"/>
+    <path d="M83 164c1-20 6.5-30 13-30s12 10 13 30v5H83z"/>
+    <ellipse cx="120" cy="114" rx="10.5" ry="12"/>
+    <path d="M104 168c1.4-24 8-35 16-35s14.6 11 16 35v6h-32z"/>
+    <ellipse cx="144" cy="118" rx="9" ry="10.5"/>
+    <path d="M131 164c1-20 6.5-30 13-30s12 10 13 30v5h-26z"/>
   </g>
 </svg>
