@@ -65,7 +65,7 @@ export default function CTASection({
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
               quality={72}
-              className="object-cover object-[center_35%]"
+              className="object-cover object-center"
             />
           </div>
         </div>
