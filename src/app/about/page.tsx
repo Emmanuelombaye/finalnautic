@@ -118,7 +118,7 @@ export default function AboutPage() {
               recommendations, and follow-up are clinical decisions — never guaranteed purchases.
             </p>
             <Link href={siteConfig.assessmentUrl} className="btn-primary mt-10 inline-flex">
-              Start Your Private Assessment
+              Start Your Wellness Assessment
             </Link>
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function AboutPage() {
               any treatment decision.
             </p>
             <Link href={siteConfig.assessmentUrl} className="btn-primary mt-10 inline-flex w-fit">
-              Start Your Private Assessment
+              Start Your Wellness Assessment
             </Link>
           </div>
         </div>

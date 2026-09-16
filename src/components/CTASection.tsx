@@ -12,7 +12,7 @@ export default function CTASection({
     </>
   ),
   subtitle = "Complete your medical intake for review by a licensed provider. Depending on your treatment, medical history, location, and clinical needs, your evaluation may be completed asynchronously or through a live consultation.",
-  primaryLabel = "Start Your Private Assessment",
+  primaryLabel = "Start Your Wellness Assessment",
   secondaryLabel,
   secondaryHref,
   footerNote,

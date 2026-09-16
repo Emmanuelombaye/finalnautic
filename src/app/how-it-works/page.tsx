@@ -68,7 +68,7 @@ export default function HowItWorksPage() {
           <p className="eyebrow mb-4">Ready when you are</p>
           <h2 className="heading-section">Begin with a confidential medical intake.</h2>
           <Link href={siteConfig.assessmentUrl} className="btn-primary mt-10 inline-flex">
-            Start Your Private Assessment
+            Start Your Wellness Assessment
           </Link>
         </div>
       </section>

@@ -41,7 +41,7 @@ export default function Hero() {
 
           <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 px-1 sm:flex-row sm:items-center sm:px-0">
             <Link href={siteConfig.assessmentUrl} className="btn-primary w-full sm:w-auto">
-              Start Your Private Assessment
+              Start Your Wellness Assessment
             </Link>
             <Link href={siteConfig.pricingUrl} className="btn-ghost w-full sm:w-auto">
               View Pricing

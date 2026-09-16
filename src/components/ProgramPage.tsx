@@ -58,7 +58,7 @@ export default function ProgramPage({ treatment }: { treatment: Treatment }) {
               </div>
               <div className="mt-9 flex flex-wrap items-center gap-6">
                 <Link href={siteConfig.assessmentUrl} className="btn-primary">
-                  Start Your Private Assessment
+                  Start Your Wellness Assessment
                 </Link>
                 <p className="font-serif text-3xl text-primary-foreground">
                   ${treatment.price}
@@ -260,7 +260,7 @@ export default function ProgramPage({ treatment }: { treatment: Treatment }) {
             href={siteConfig.assessmentUrl}
             className="mt-12 inline-flex items-center justify-center rounded-full bg-gold px-12 py-4 text-sm tracking-wide text-forest transition-all duration-500 hover:-translate-y-0.5 hover:bg-gold/90"
           >
-            Start Your Private Assessment
+            Start Your Wellness Assessment
           </Link>
           <p className="mx-auto mt-8 max-w-xl text-[0.72rem] leading-relaxed text-primary-foreground/50">
             Begins a secure intake — not a purchase.

@@ -100,7 +100,7 @@ export default function ComparisonSection() {
         </p>
         <div className="mt-10 text-center">
           <Link href={siteConfig.assessmentUrl} className="btn-primary">
-            Start Your Private Assessment
+            Start Your Wellness Assessment
           </Link>
         </div>
       </div>

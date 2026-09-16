@@ -42,7 +42,7 @@ export default function MobileStickyBar() {
             href={siteConfig.assessmentUrl}
             className="inline-flex shrink-0 items-center justify-center rounded-full bg-forest px-5 py-3 text-[0.72rem] font-light uppercase tracking-[0.14em] text-primary-foreground transition active:scale-[0.98] active:bg-forest/90 touch-manipulation"
           >
-            Start Assessment
+            Wellness Assessment
           </Link>
         </div>
       </div>

@@ -49,7 +49,7 @@ export default function Header() {
               aria-hidden
             />
             <span className="relative transition-colors duration-500 group-hover:text-background group-active:text-background">
-              Start Your Private Assessment
+              Start Your Wellness Assessment
             </span>
           </Link>
         </div>
@@ -88,7 +88,7 @@ export default function Header() {
               className="btn-secondary mt-5 mb-4 w-full text-center text-xs uppercase tracking-[0.16em]"
               onClick={() => setMobileOpen(false)}
             >
-              Start Your Private Assessment
+              Start Your Wellness Assessment
             </Link>
           </nav>
         </div>

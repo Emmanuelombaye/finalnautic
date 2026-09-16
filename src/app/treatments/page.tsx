@@ -90,7 +90,7 @@ export default function TreatmentsPage() {
             health history, and a licensed provider can evaluate appropriate next steps.
           </p>
           <Link href={siteConfig.assessmentUrl} className="btn-primary mt-10 inline-flex">
-            Start Your Private Assessment
+            Start Your Wellness Assessment
           </Link>
         </div>
       </section>

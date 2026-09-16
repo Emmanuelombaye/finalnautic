@@ -41,7 +41,7 @@ export default function FaqPage() {
               Contact
             </Link>
             <Link href={siteConfig.assessmentUrl} className="btn-primary">
-              Start Your Private Assessment
+              Start Your Wellness Assessment
             </Link>
           </div>
         </div>
