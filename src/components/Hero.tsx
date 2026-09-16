@@ -43,7 +43,11 @@ export default function Hero() {
             <Link href={siteConfig.assessmentUrl} className="btn-primary w-full sm:w-auto">
               Start Your Wellness Assessment
             </Link>
-            <Link href={siteConfig.pricingUrl} className="btn-ghost w-full sm:w-auto">
+            <Link
+              href={siteConfig.pricingUrl}
+              className="btn-ghost w-full sm:w-auto"
+              style={{ color: "white", borderColor: "rgba(255,255,255,0.38)" }}
+            >
               View Pricing
             </Link>
           </div>
