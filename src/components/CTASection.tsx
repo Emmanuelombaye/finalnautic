@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+﻿import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/data";
@@ -57,15 +57,17 @@ export default function CTASection({
             <p className="mt-6 text-xs text-sage">{footerNote}</p>
           )}
         </div>
-        <div className="md:col-span-5">
-          <div className="relative aspect-[3/2] overflow-hidden rounded-3xl bg-surface">
+        <div className="w-full md:col-span-5">
+          <div className="relative mx-auto aspect-[1100/758] w-full max-w-xl overflow-hidden rounded-3xl bg-surface md:max-w-none">
             <Image
               src={sectionAssets.ctaStretch}
               alt="A man and a woman stretching together in a sunlit sage-toned studio"
               fill
-              sizes="(max-width: 768px) 100vw, 40vw"
-              quality={72}
-              className="object-cover object-center"
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 45vw, 420px"
+              quality={62}
+              loading="lazy"
+              decoding="async"
+              className="object-cover object-[50%_58%] sm:object-[50%_52%] md:object-center"
             />
           </div>
         </div>

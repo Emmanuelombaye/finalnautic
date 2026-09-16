@@ -62,7 +62,6 @@ const files = {
     "/__l5e/assets-v1/33e2b9a2-d49e-4558-9538-dd156f94b8be/tasso-blood-test.png",
   "public/assets/philosophy/philosophy.jpg": "/assets/philosophy-DxQvW9CP.jpg",
   "public/assets/philosophy/longevity.jpg": "/assets/longevity-C1b8388j.jpg",
-  "public/assets/cta/cta-stretch.jpg": "/assets/cta-stretch-real-BQuXPQGF.jpg",
   // Exact live Patient Journey mockups (hashed names = cache-bust + bit-identical to nautichealth.com)
   "public/assets/journey/journey-goal-CDDjGLt3.jpg": "/assets/journey-goal-CDDjGLt3.jpg",
   "public/assets/journey/journey-assessment-CqRN--0_.jpg": "/assets/journey-assessment-CqRN--0_.jpg",
