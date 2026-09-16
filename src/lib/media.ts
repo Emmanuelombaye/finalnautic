@@ -12,8 +12,8 @@ export const brandAssets = {
   logo: local("/assets/brand/nautic-logo.webp"),
   /** Original PNG used by nautichealth.com hero logo splash. */
   logoPng: local("/assets/brand/nautic-logo.png"),
-  /** Exact live poster (same JPG nautichealth.com preloads). */
-  heroPoster: local("/assets/hero/nh-nature-poster.jpg"),
+  /** Light poster for faster LCP; same frame as nautichealth.com. */
+  heroPoster: local("/assets/hero/nh-nature-poster.webp"),
   favicon: local("/favicon.png"),
 } as const;
 
@@ -37,12 +37,12 @@ export const treatmentImages = {
   tirzepatide: local("/assets/treatments/tirzepatide.webp"),
   semaglutide: local("/assets/treatments/semaglutide.webp"),
   semaglutideEditorial: local("/assets/treatments/semaglutide.webp"),
-  hormone: local("/assets/treatments/hormone.jpg"),
-  nad: local("/assets/treatments/nad.jpg"),
-  sermorelin: local("/assets/treatments/sermorelin.jpg"),
-  performance: local("/assets/treatments/performance.jpg"),
-  cognitive: local("/assets/treatments/cognitive.jpg"),
-  overall: local("/assets/treatments/overall.jpg"),
+  hormone: local("/assets/treatments/hormone.webp"),
+  nad: local("/assets/treatments/nad.webp"),
+  sermorelin: local("/assets/treatments/sermorelin.webp"),
+  performance: local("/assets/treatments/performance.webp"),
+  cognitive: local("/assets/treatments/cognitive.webp"),
+  overall: local("/assets/treatments/overall.webp"),
 } as const;
 
 /** Exact live-site journey UI mockups (homepage Patient Journey). */
@@ -55,12 +55,12 @@ export const journeyImages = {
 } as const;
 
 export const journalImages = {
-  hero: local("/assets/journal/journal-hero.jpg"),
-  cellular: local("/assets/journal/journal-cellular.jpg"),
-  recovery: local("/assets/journal/program-recovery.jpg"),
-  nutrition: local("/assets/journal/journal-nutrition.jpg"),
-  sleep: local("/assets/journal/journal-sleep.jpg"),
-  weight: local("/assets/journal/program-weight.jpg"),
+  hero: local("/assets/journal/journal-hero.webp"),
+  cellular: local("/assets/journal/journal-cellular.webp"),
+  recovery: local("/assets/journal/program-recovery.webp"),
+  nutrition: local("/assets/journal/journal-nutrition.webp"),
+  sleep: local("/assets/journal/journal-sleep.webp"),
+  weight: local("/assets/journal/program-weight.webp"),
 } as const;
 
 /** Four hero clips — same carousel as nautichealth.com. */
