@@ -28,7 +28,7 @@ export const sectionAssets = {
   tassoBloodTest: local("/assets/diagnostics/tasso-blood-test.webp"),
   philosophy: local("/assets/philosophy/philosophy.webp"),
   longevity: local("/assets/philosophy/longevity.webp"),
-  ctaStretch: local("/assets/cta/cta-stretch.webp"),
+  ctaStretch: local("/assets/cta/cta-stretch-fixed.webp"),
   clinic: local("/assets/pages/clinic.webp"),
   couple: local("/assets/pages/couple.webp"),
 } as const;

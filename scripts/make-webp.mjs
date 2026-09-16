@@ -16,7 +16,7 @@ const jobs = [
   ["public/assets/hero/nh-nature-poster.jpg", 1400, 62],
   ["public/assets/philosophy/philosophy.jpg", 1100, 60],
   ["public/assets/philosophy/longevity.jpg", 1100, 62],
-  ["public/assets/cta/cta-stretch.jpg", 1000, 62],
+  ["public/assets/cta/cta-stretch-fixed.jpg", 1000, 62],
   ["public/assets/pages/clinic.jpg", 1000, 62],
   ["public/assets/pages/couple.jpg", 1100, 62],
   ["public/assets/diagnostics/tasso-blood-test.png", 1000, 68],
