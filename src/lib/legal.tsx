@@ -676,7 +676,7 @@ export const termsContent = (
 
     <h2>14. Shipping and Fulfillment</h2>
     <p>
-      Shipping and delivery estimates are not guarantees. Timing may vary based
+      Shipping and delivery estimates are not guaranteed. Timing may vary based
       on provider review, pharmacy processing, product or ingredient availability,
       prescription clarification, address verification, carrier delays, weather,
       holidays, and applicable law.
@@ -851,7 +851,7 @@ export const termsContent = (
 
     <h2>26. Governing Law and Dispute Resolution</h2>
     <p>
-      These Terms are governed by the laws of the State of New York, without
+      These Terms are governed by the laws of the State of Wyoming, without
       regard to conflict-of-law principles, except where applicable law requires
       otherwise. Any arbitration agreement, venue provision, class-action waiver,
       or other dispute-resolution requirement should be inserted here only after
@@ -921,7 +921,7 @@ export const termsContent = (
       <br />
       <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
       <br />
-      <a href="tel:+16314172117">(631) 417-2117</a>
+      <a href="tel:+13473770307">(347)377-0307</a>
     </p>
   </>
 );
