@@ -82,6 +82,24 @@ export default function FooterTrustBadges() {
         })}
       </div>
 
+      <div className="mt-8 flex justify-center md:mt-10">
+        <a
+          href="https://www.legitscript.com/websites/?checker_keywords=nautichealth.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Verify LegitScript Approval for www.nautichealth.com"
+        >
+          {/* Exact 73×79 — do not scale (LegitScript guidance) */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://static.legitscript.com/seals/52248867.png"
+            alt="Verify Approval for www.nautichealth.com"
+            width={73}
+            height={79}
+          />
+        </a>
+      </div>
+
       <p className="mx-auto mt-6 max-w-2xl text-center text-[0.68rem] leading-relaxed text-sage md:mt-7">
         Prescriptions are never guaranteed. Treatment is provided only when a licensed
         provider determines it is clinically appropriate. Compounded medications are
