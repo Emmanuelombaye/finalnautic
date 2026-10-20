@@ -1,155 +1,136 @@
-import Image from "next/image";
-import Link from "next/link";
-import { aboutPrinciples, siteConfig } from "@/lib/data";
-import { sectionAssets } from "@/lib/media";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Nautic Health provides physician-guided Semaglutide and Tirzepatide weight-management care.",
+  title: "About — Nautic Health",
+  description: "Our philosophy: proactive, personalized, evidence-based longevity care for people who take their health seriously.",
 };
 
-export default function AboutPage() {
+import Link from "next/link";
+import philosophyImg from "@/assets/philosophy.jpg";
+import clinicImg from "@/assets/clinic.jpg";
+import coupleImg from "@/assets/couple.jpg";
+import { Eyebrow, SectionHeading } from "@/components/ui/section";
+
+const principles = [
+  { t: "Proactive", d: "We measure early, act early, and adjust often. Health is a long game." },
+  { t: "Personal", d: "No two plans are alike. Every protocol is a reflection of your data and goals." },
+  { t: "Evidence-based", d: "We integrate the newest science with the discipline of clinical medicine." },
+  { t: "Discreet", d: "Concierge care, delivered with the calm of a well-run practice." },
+];
+
+function About() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container-luxe pb-10 md:pb-12">
-          <p className="eyebrow mb-4">About</p>
-          <h1 className="heading-display max-w-3xl">
-            Physician-guided weight management, done carefully.
+      <section className="container-luxe pt-16 md:pt-24 pb-20">
+        <div className="max-w-3xl">
+          <Eyebrow>About</Eyebrow>
+          <h1 className="mt-6 text-5xl md:text-7xl leading-[1.02] text-balance">
+            A practice built for the <em className="italic">next</em> chapter of medicine.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Nautic Health offers physician-guided Semaglutide and Tirzepatide programs. We review
-            your history, design a plan around your goals, and stay close as you progress — with
-            prescriptions issued only when clinically appropriate.
+          <p className="mt-8 text-lg text-muted-foreground leading-relaxed">
+            Nautic Health is a modern longevity clinic that partners with
+            adults who take their health seriously. We measure what matters,
+            design plans that hold up over decades, and stay close as your life
+            changes — because meaningful health outcomes are the result of
+            small, consistent decisions made over time.
           </p>
         </div>
       </section>
 
-      <section className="container-luxe pb-8 md:pb-12">
-        <div className="relative aspect-[16/8] overflow-hidden rounded-3xl bg-surface">
-          <Image
-            src={sectionAssets.clinic}
-            alt="Nautic Health clinic interior"
-            fill
-            sizes="100vw"
-            quality={70}
-            priority
-            className="object-cover object-center"
-          />
+      <section className="container-luxe">
+        <div className="aspect-[16/8] rounded-3xl overflow-hidden">
+          <img src={clinicImg} alt="Nautic Health clinic interior" className="h-full w-full object-cover" loading="lazy" />
         </div>
       </section>
 
-      <section className="container-luxe py-12 md:py-16">
-        <div className="grid items-start gap-10 md:grid-cols-12 md:gap-12">
-          <div className="md:sticky md:top-24 md:col-span-5 md:h-fit">
-            <span className="inline-flex items-center gap-3">
-              <span className="h-px w-6 bg-sage" />
-              <span className="eyebrow">Philosophy</span>
-            </span>
-            <h2 className="mt-6 text-balance text-4xl leading-[1.05] md:text-5xl">
+      <section className="container-luxe py-28 md:py-40">
+        <div className="grid md:grid-cols-12 gap-14 items-start">
+          <div className="md:col-span-5 md:sticky md:top-28">
+            <Eyebrow>Philosophy</Eyebrow>
+            <h2 className="mt-6 text-4xl md:text-5xl leading-[1.05] text-balance">
               Care that compounds. <em className="italic">Quietly.</em>
             </h2>
           </div>
-          <div className="space-y-8 text-lg leading-relaxed text-forest/85 md:col-span-7">
+          <div className="md:col-span-7 space-y-8 text-lg leading-relaxed text-forest/85">
             <p>
-              Weight management works best when it is medical, measured, and personal. Nautic Health
-              was built to combine licensed provider review with transparent monthly pricing and
-              ongoing clinical support.
+              Conventional medicine excels at responding to illness. But most of
+              the outcomes we care about — energy, resilience, sharp cognition,
+              a body that moves the way we want it to at 70 — are shaped long
+              before disease appears. Nautic Health was built to occupy that space.
             </p>
             <p>
-              Every plan starts with your assessment. Nothing is prescribed before a licensed
-              provider reviews your history, medications, and — when indicated — laboratory results.
+              We combine advanced diagnostics, physician oversight, and a small,
+              considered set of interventions to help you build a life that ages
+              well. Every plan is tailored to your data and your goals. No
+              gimmicks. No fads. No selling.
             </p>
             <p>
-              The result is a practice that respects your time, your intelligence, and the
-              seriousness of building sustainable change.
+              The result is a practice that feels less like a clinic and more
+              like a trusted advisor — one that respects your time, your
+              intelligence, and the seriousness of what's at stake.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="container-luxe pb-12 md:pb-16">
-        <div className="max-w-2xl">
-          <span className="inline-flex items-center gap-3">
-            <span className="h-px w-6 bg-sage" />
-            <span className="eyebrow">Principles</span>
-          </span>
-          <h2 className="mt-6 text-balance text-4xl leading-[1.05] md:text-5xl">
-            Four commitments.
-          </h2>
-        </div>
-        <div className="mt-10 grid gap-10 md:grid-cols-4">
-          {aboutPrinciples.map((principle) => (
-            <div key={principle.step} className="border-t border-forest/15 pt-6">
-              <span className="font-serif text-sm text-gold">{principle.step}</span>
-              <h3 className="mt-4 font-serif text-xl text-forest">{principle.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {principle.description}
-              </p>
-            </div>
-          ))}
+      <section className="bg-surface/60 py-28 md:py-32">
+        <div className="container-luxe">
+          <SectionHeading eyebrow="Principles" title="Four commitments." />
+          <div className="mt-16 grid gap-10 md:grid-cols-4">
+            {principles.map((p, i) => (
+              <div key={p.t} className="border-t border-forest/15 pt-6">
+                <span className="font-serif text-sm text-gold">0{i + 1}</span>
+                <h3 className="mt-4 font-serif text-2xl text-forest">{p.t}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.d}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="container-luxe pb-12 md:pb-16">
-        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-surface">
-            <Image
-              src={sectionAssets.philosophy}
-              alt="A morning wellness ritual"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              quality={70}
-              className="object-cover object-center"
-            />
+      <section className="container-luxe py-28 md:py-40">
+        <div className="grid md:grid-cols-2 gap-14 items-center">
+          <div className="aspect-[4/5] rounded-3xl overflow-hidden">
+            <img src={philosophyImg} alt="A morning wellness ritual" className="h-full w-full object-cover" loading="lazy" />
           </div>
           <div>
-            <span className="inline-flex items-center gap-3">
-              <span className="h-px w-6 bg-sage" />
-              <span className="eyebrow">The team</span>
-            </span>
-            <h2 className="mt-6 text-balance text-4xl leading-[1.05] md:text-5xl">
-              Licensed providers. <em className="italic">Clear decisions.</em>
+            <Eyebrow>The team</Eyebrow>
+            <h2 className="mt-6 text-4xl md:text-5xl leading-[1.05] text-balance">
+              Physicians who think like <em className="italic">longevity partners.</em>
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-              Your case is reviewed by a licensed medical provider. Eligibility, treatment
-              recommendations, and follow-up are clinical decisions — never guaranteed purchases.
+              Our medical team brings together internal medicine, endocrinology,
+              sports medicine, and functional health. What unites us is a
+              belief that the best care is quiet, considered, and deeply
+              personal. Your case is reviewed by a licensed provider who understands your plan.
             </p>
-            <Link href={siteConfig.assessmentUrl} className="btn-primary mt-10 inline-flex">
-              Start Your Private Assessment
-            </Link>
+            <div className="mt-10">
+              <Link href="/wellness-assessment" className="btn-primary">Take the Wellness Assessment</Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="container-luxe pb-12 md:pb-16">
-        <div className="relative min-h-[24rem] overflow-hidden rounded-[2.5rem] md:min-h-[28rem]">
-          <Image
-            src={sectionAssets.couple}
-            alt="A couple sharing morning coffee"
-            fill
-            sizes="100vw"
-            quality={70}
-            className="object-cover object-[58%_38%] md:object-[62%_40%]"
-          />
+      <section className="container-luxe pb-28">
+        <div className="relative min-h-[28rem] overflow-hidden rounded-[2.5rem] md:min-h-[32rem]">
+          <img src={coupleImg} alt="A couple sharing morning coffee" className="absolute inset-0 h-full w-full object-cover object-[58%_38%] md:object-[62%_40%]" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-r from-forest/95 via-forest/65 to-forest/10" />
-          <div className="relative flex h-full min-h-[24rem] flex-col justify-center p-8 text-primary-foreground md:min-h-[28rem] md:p-12 md:max-w-xl">
-            <span className="eyebrow text-gold">Begin</span>
-            <h2 className="mt-6 font-serif text-4xl leading-tight md:text-5xl">
-              Ready when you are.
-            </h2>
-            <p className="mt-6 text-base leading-relaxed text-primary-foreground/80">
-              Complete a confidential intake. A licensed provider reviews your information before
-              any treatment decision.
-            </p>
-            <Link href={siteConfig.assessmentUrl} className="btn-primary mt-10 inline-flex w-fit">
-              Start Your Private Assessment
-            </Link>
+          <div className="relative flex min-h-[28rem] max-w-2xl items-center p-10 md:min-h-[32rem] md:p-20">
+            <div>
+            <h3 className="font-serif text-3xl leading-[1.05] text-balance text-primary-foreground drop-shadow-sm md:text-5xl">
+              Join a practice designed around the life you want to be living.
+            </h3>
+            <div className="mt-8">
+              <Link href="/wellness-assessment" className="btn-primary" style={{ background: "var(--gold)", color: "var(--forest)" }}>
+                Take the Wellness Assessment
+              </Link>
+            </div>
+            </div>
           </div>
         </div>
       </section>
     </>
   );
 }
+
+export default About;

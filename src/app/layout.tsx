@@ -1,73 +1,47 @@
-import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import MobileStickyBar from "@/components/MobileStickyBar";
-import { siteConfig } from "@/lib/data";
-import { brandAssets } from "@/lib/media";
+import type { Metadata } from "next";
+import { Providers } from "@/components/Providers";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: {
-    default: `${siteConfig.name} — Physician-Guided Weight Management`,
-    template: `%s | ${siteConfig.name}`,
-  },
+  title: "Nautic Health — Personalized Longevity Medicine",
   description:
-    "Physician-guided Semaglutide and Tirzepatide weight-management programs with licensed provider review and U.S. pharmacy fulfillment when prescribed.",
+    "Nautic Health is a physician-guided longevity practice designed for people who invest in their health. Personalized programs for weight, recovery, performance, and healthy aging.",
   authors: [{ name: "Nautic Health" }],
-  icons: {
-    icon: brandAssets.favicon,
-  },
   openGraph: {
     siteName: "Nautic Health",
-    title: "Nautic Health — Physician-Guided Weight Management",
+    title: "Nautic Health — Personalized Longevity Medicine",
     description:
-      "Physician-guided Semaglutide and Tirzepatide weight-management programs with licensed provider review.",
+      "A modern longevity practice for a longer, healthier life. Physician-guided, personalized, quietly luxurious.",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Nautic Health — Physician-Guided Weight Management",
-    description:
-      "Physician-guided Semaglutide and Tirzepatide weight-management programs with licensed provider review.",
-  },
-};
-
-export const viewport: Viewport = {
+  twitter: { card: "summary_large_image" },
   themeColor: "#FAF8F3",
+  icons: { icon: "/favicon.png" },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${cormorant.variable} min-h-screen bg-background font-sans text-forest antialiased`}
-      >
-        <div className="flex min-h-screen flex-col pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">
-          <Header />
-          <main className="flex-1 pt-[4.25rem] md:pt-[4.5rem]">{children}</main>
-          <Footer />
-          <MobileStickyBar />
-        </div>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
+        <Providers>
+          <div className="min-h-screen flex flex-col bg-background pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">
+            <SiteHeader />
+            <main className="flex-1 pt-20">{children}</main>
+            <SiteFooter />
+            <StickyMobileCTA />
+          </div>
+        </Providers>
       </body>
     </html>
   );

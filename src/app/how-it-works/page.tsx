@@ -1,61 +1,72 @@
-import Image from "next/image";
-import Link from "next/link";
-import { howItWorksSteps, siteConfig } from "@/lib/data";
-import { sectionAssets } from "@/lib/media";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How It Works",
-  description:
-    "Five clear steps from medical intake and licensed provider review to ongoing, physician-guided care.",
+  title: "How It Works — Nautic Health",
+  description: "Five clear steps from medical intake and licensed provider review to ongoing, physician-guided care.",
 };
 
-export default function HowItWorksPage() {
+import Link from "next/link";
+import clinicImg from "@/assets/clinic.jpg";
+import { Eyebrow } from "@/components/ui/section";
+
+const steps = [
+  {
+    n: "01",
+    title: "Choose your treatment or program",
+    body: "Explore Nautic Health treatments and programs based on your health and wellness goals.",
+  },
+  {
+    n: "02",
+    title: "Complete your medical intake",
+    body: "Provide the medical information needed for a licensed provider to evaluate your eligibility and determine whether treatment is medically appropriate.",
+  },
+  {
+    n: "03",
+    title: "Provider review",
+    body: "A licensed medical provider reviews your information. Depending on your treatment, medical history, state requirements, and clinical needs, this review may be completed asynchronously or may include a live consultation.",
+  },
+  {
+    n: "04",
+    title: "Treatment determination",
+    body: "If treatment is medically appropriate, your provider determines the appropriate treatment plan and prescription.",
+  },
+  {
+    n: "05",
+    title: "Ongoing care",
+    body: "Receive ongoing physician-guided support and follow-up as appropriate for your treatment plan.",
+  },
+];
+
+function HowItWorks() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container-luxe pb-10 md:pb-12">
-          <p className="eyebrow mb-4">How it works</p>
-          <h1 className="heading-display max-w-3xl">
+      <section className="container-luxe pt-16 md:pt-24 pb-16">
+        <div className="max-w-3xl">
+          <Eyebrow>How it works</Eyebrow>
+          <h1 className="mt-6 text-5xl md:text-7xl leading-[1.02] text-balance">
             Five considered steps to <em className="italic">a better decade.</em>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            The Nautic Health journey is deliberately quiet. We take the time to understand you —
-            and then we stay close for the long run.
+          <p className="mt-8 text-lg text-muted-foreground leading-relaxed">
+            The Nautic Health journey is deliberately quiet. We take the time to
+            understand you — and then we stay close for the long run.
           </p>
         </div>
       </section>
 
-      <section className="container-luxe pb-16 md:pb-20">
-        <div className="grid gap-16 md:grid-cols-12">
-          <div className="md:sticky md:top-24 md:col-span-5 md:h-fit">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-surface">
-              <Image
-                src={sectionAssets.clinic}
-                alt="Nautic Health clinic"
-                fill
-                sizes="(max-width: 768px) 100vw, 40vw"
-                quality={70}
-                className="object-cover object-center"
-                priority
-              />
+      <section className="container-luxe pb-32">
+        <div className="grid md:grid-cols-12 gap-16">
+          <div className="md:col-span-5 md:sticky md:top-28 h-fit">
+            <div className="aspect-[4/5] rounded-3xl overflow-hidden">
+              <img src={clinicImg} alt="Nautic Health clinic" className="h-full w-full object-cover" loading="lazy" />
             </div>
           </div>
-
-          <ol className="space-y-14 md:col-span-7">
-            {howItWorksSteps.map((step) => (
-              <li
-                key={step.step}
-                className="grid grid-cols-[auto_1fr] gap-6 border-t border-forest/15 pt-8 md:gap-8"
-              >
-                <span className="font-serif text-4xl leading-none text-gold">{step.step}</span>
+          <ol className="md:col-span-7 space-y-14">
+            {steps.map((s) => (
+              <li key={s.n} className="grid grid-cols-[auto_1fr] gap-6 md:gap-8 border-t border-forest/15 pt-8">
+                <span className="font-serif text-4xl text-gold leading-none">{s.n}</span>
                 <div>
-                  <h2 className="text-balance font-serif text-2xl text-forest md:text-3xl">
-                    {step.title}
-                  </h2>
-                  <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                    {step.description}
-                  </p>
+                  <h3 className="font-serif text-2xl md:text-3xl text-forest text-balance">{s.title}</h3>
+                  <p className="mt-4 text-base leading-relaxed text-muted-foreground">{s.body}</p>
                 </div>
               </li>
             ))}
@@ -63,15 +74,19 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <section className="bg-surface/60 py-14 md:py-20">
-        <div className="container-luxe text-center">
-          <p className="eyebrow mb-4">Ready when you are</p>
-          <h2 className="heading-section">Begin with a confidential medical intake.</h2>
-          <Link href={siteConfig.assessmentUrl} className="btn-primary mt-10 inline-flex">
-            Start Your Private Assessment
-          </Link>
+      <section className="bg-surface/60 py-24">
+        <div className="container-luxe flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div>
+            <Eyebrow>Ready when you are</Eyebrow>
+            <h2 className="mt-4 font-serif text-3xl md:text-4xl text-forest text-balance max-w-xl">
+              Begin with a confidential medical intake.
+            </h2>
+          </div>
+          <Link href="/wellness-assessment" className="btn-primary self-start md:self-auto">Take the Wellness Assessment</Link>
         </div>
       </section>
     </>
   );
 }
+
+export default HowItWorks;
