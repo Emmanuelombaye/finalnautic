@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { assetUrl } from "@/lib/asset";
 import logoFull from "@/assets/nautic-logo.png.asset.json";
+import FooterTrustBadges from "@/components/FooterTrustBadges";
 
 const navItems = [
   { to: "/treatments", label: "Treatments" },
@@ -95,7 +96,9 @@ export function SiteFooter() {
 
         <div className="hairline my-14" />
 
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-xs text-muted-foreground">
+        <FooterTrustBadges />
+
+        <div className="mt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Nautic Health. All rights reserved.</p>
           <div className="flex justify-center">
             <a
@@ -114,8 +117,8 @@ export function SiteFooter() {
             </a>
           </div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-forest">Privacy</a>
-            <a href="#" className="hover:text-forest">Terms</a>
+            <Link href="/hipaa" className="hover:text-forest">HIPAA</Link>
+            <Link href="/provider-network" className="hover:text-forest">Provider Network</Link>
             <Link href="/contact" className="hover:text-forest">Contact</Link>
           </div>
         </div>
