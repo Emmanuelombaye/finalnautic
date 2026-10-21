@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 240 240" role="img" aria-label="Data protected, HIPAA compliant">
+  <defs>
+    <linearGradient id="hipaa-gold" x1="36" y1="18" x2="204" y2="222" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6E7B2"/>
+      <stop offset="0.42" stop-color="#C9A227"/>
+      <stop offset="1" stop-color="#7A5A10"/>
+    </linearGradient>
+    <path id="hipaa-top" d="M 34,120 A 86,86 0 0,1 206,120"/>
+    <path id="hipaa-bot" d="M 34,120 A 86,86 0 0,0 206,120"/>
+  </defs>
+  <circle cx="120" cy="120" r="118" fill="#102018"/>
+  <circle cx="120" cy="120" r="114" fill="none" stroke="url(#hipaa-gold)" stroke-width="7"/>
+  <circle cx="120" cy="120" r="104" fill="none" stroke="#E8D5A3" stroke-width="1.5" opacity="0.9"/>
+  <circle cx="120" cy="120" r="62" fill="#163024"/>
+  <circle cx="120" cy="120" r="62" fill="none" stroke="url(#hipaa-gold)" stroke-width="2"/>
+
+  <text fill="#F7F1DE" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" letter-spacing="2.2">
+    <textPath href="#hipaa-top" xlink:href="#hipaa-top" startOffset="50%" text-anchor="middle">HIPAA COMPLIANT</textPath>
+  </text>
+  <text fill="#F7F1DE" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" letter-spacing="2.8">
+    <textPath href="#hipaa-bot" xlink:href="#hipaa-bot" startOffset="50%" text-anchor="middle">DATA PROTECTED</textPath>
+  </text>
+
+  <circle cx="36" cy="120" r="2.4" fill="#E8D5A3"/>
+  <circle cx="204" cy="120" r="2.4" fill="#E8D5A3"/>
+
+  <!-- Shield + lock — standard telehealth trust glyph -->
+  <path
+    d="M120 78c18 8 34 8 42 8v28c0 28-18 48-42 58-24-10-42-30-42-58V86c8 0 24 0 42-8z"
+    fill="#F7F1DE"
+  />
+  <path
+    d="M120 90c12 5.5 23 5.5 28.5 5.5V118c0 18.5-12 32.5-28.5 39.5-16.5-7-28.5-21-28.5-39.5v-22.5C97 95.5 108 95.5 120 90z"
+    fill="#163024"
+  />
+  <rect x="110" y="118" width="20" height="16" rx="3" fill="#F3E2A8"/>
+  <path
+    d="M114 118v-6a6 6 0 0 1 12 0v6"
+    fill="none"
+    stroke="#F3E2A8"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+  <circle cx="120" cy="125" r="2.2" fill="#163024"/>
+</svg>
