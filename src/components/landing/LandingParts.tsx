@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Plus, Minus } from "lucide-react";
 import type { Faq } from "@/lib/program-content";
+import { StartCareButton } from "@/components/StartCareButton";
 
 export function LandingHero({
   eyebrow,
@@ -13,6 +14,7 @@ export function LandingHero({
   image,
   chips,
   dark = false,
+  treatmentKey,
 }: {
   eyebrow: string;
   name: string;
@@ -21,6 +23,8 @@ export function LandingHero({
   image: string;
   chips?: string[];
   dark?: boolean;
+  /** When set and mapped in VCO, Begin Your Care opens hosted intake */
+  treatmentKey?: string;
 }) {
   return (
     <section className="relative">
@@ -67,12 +71,12 @@ export function LandingHero({
               </div>
             )}
             <div className="mt-9 flex flex-wrap items-center gap-6">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-gold px-10 py-4 text-sm tracking-wide text-forest transition-all duration-500 hover:-translate-y-0.5 hover:bg-gold/90"
+              <StartCareButton
+                treatmentKey={treatmentKey}
+                className="inline-flex items-center justify-center rounded-full bg-gold px-10 py-4 text-sm tracking-wide text-forest transition-all duration-500 hover:-translate-y-0.5 hover:bg-gold/90 disabled:opacity-70"
               >
                 Begin Your Care
-              </Link>
+              </StartCareButton>
               <p className="font-serif text-3xl text-primary-foreground">
                 ${price}
                 <span className="ml-1 font-sans text-sm uppercase tracking-[0.14em] text-primary-foreground/60">/mo</span>
@@ -254,9 +258,11 @@ export function MedicalDisclaimer() {
 export function FinalCta({
   title,
   intro,
+  treatmentKey,
 }: {
   title: React.ReactNode;
   intro: string;
+  treatmentKey?: string;
 }) {
   return (
     <section className="container-luxe pb-28 md:pb-36">
@@ -270,12 +276,12 @@ export function FinalCta({
         <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/75">
           {intro}
         </p>
-        <Link
-          href="/contact"
-          className="mt-12 inline-flex items-center justify-center rounded-full bg-gold px-12 py-4 text-sm tracking-wide text-forest transition-all duration-500 hover:-translate-y-0.5 hover:bg-gold/90"
+        <StartCareButton
+          treatmentKey={treatmentKey}
+          className="mt-12 inline-flex items-center justify-center rounded-full bg-gold px-12 py-4 text-sm tracking-wide text-forest transition-all duration-500 hover:-translate-y-0.5 hover:bg-gold/90 disabled:opacity-70"
         >
           Begin Your Care
-        </Link>
+        </StartCareButton>
         <p className="mx-auto mt-8 max-w-xl text-[0.72rem] leading-relaxed text-primary-foreground/50">
           Begins a secure intake — not a purchase.
         </p>

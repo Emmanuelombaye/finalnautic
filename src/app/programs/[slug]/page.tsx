@@ -39,6 +39,7 @@ export default function ProgramPage() {
         price={p.price}
         image={p.image}
         chips={[`Includes ${p.includes}`]}
+        treatmentKey={p.slug}
       />
       <Breadcrumb label="Programs" to="/treatments" />
       <section className="container-luxe py-20 md:py-28">
@@ -92,6 +93,7 @@ export default function ProgramPage() {
       <FinalCta
         title={<>Begin with an <em className="italic">assessment</em>, not an assumption.</>}
         intro="A licensed provider will review your history and tell you honestly whether this program is right for you."
+        treatmentKey={p.slug}
       />
     </>
   );

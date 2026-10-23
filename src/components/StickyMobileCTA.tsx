@@ -4,11 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { StartCareButton } from "@/components/StartCareButton";
 import { getBundle, getProgram } from "@/lib/program-content";
+import { hasStorefrontIntake } from "@/lib/vco";
 
-type BarContent = { left: string; leftIsPrice: boolean } | null;
+type BarContent = {
+  left: string;
+  leftIsPrice: boolean;
+  treatmentKey?: string;
+} | null;
 
-const HIDDEN_PREFIXES = ["/wellness-assessment", "/book", "/patient-portal"];
+const HIDDEN_PREFIXES = ["/wellness-assessment", "/book", "/patient-portal", "/start"];
 
 function resolveContent(pathname: string): BarContent {
   const path = pathname.replace(/\/+$/, "") || "/";
@@ -17,8 +23,15 @@ function resolveContent(pathname: string): BarContent {
 
   const programMatch = path.match(/^\/programs\/([^/]+)$/);
   if (programMatch) {
-    const program = getProgram(programMatch[1]);
-    if (program) return { left: `$${program.price}/mo`, leftIsPrice: true };
+    const slug = programMatch[1];
+    const program = getProgram(slug);
+    if (program) {
+      return {
+        left: `$${program.price}/mo`,
+        leftIsPrice: true,
+        treatmentKey: hasStorefrontIntake(slug) ? slug : undefined,
+      };
+    }
     return { left: "View Pricing", leftIsPrice: false };
   }
 
@@ -81,13 +94,21 @@ export function StickyMobileCTA() {
               </Link>
             )}
           </div>
-          <Link
-            href="/wellness-assessment"
-            search={(prev: Record<string, unknown>) => prev}
-            className="inline-flex shrink-0 items-center justify-center rounded-full bg-forest px-5 py-3 text-[0.72rem] font-light uppercase tracking-[0.14em] text-primary-foreground"
-          >
-            Wellness Assessment
-          </Link>
+          {content.treatmentKey ? (
+            <StartCareButton
+              treatmentKey={content.treatmentKey}
+              className="inline-flex shrink-0 items-center justify-center rounded-full bg-forest px-5 py-3 text-[0.72rem] font-light uppercase tracking-[0.14em] text-primary-foreground disabled:opacity-70"
+            >
+              Begin Care
+            </StartCareButton>
+          ) : (
+            <Link
+              href="/wellness-assessment"
+              className="inline-flex shrink-0 items-center justify-center rounded-full bg-forest px-5 py-3 text-[0.72rem] font-light uppercase tracking-[0.14em] text-primary-foreground"
+            >
+              Wellness Assessment
+            </Link>
+          )}
         </div>
       </div>
     </div>
